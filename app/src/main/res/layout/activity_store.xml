@@ -69,12 +69,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Pesquisar"
-                    android:textSize="20dp" />
+                    />
             </androidx.cardview.widget.CardView>
 
 
@@ -91,13 +90,16 @@
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:src="@drawable/ic_baseline_share_24"
-        android:tint="@color/white"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/orange"
+        android:backgroundTintMode="add"
+        android:elevation="5dp"
+        android:src="@drawable/ic_baseline_menu_24"
         app:layout_anchor="@id/appBarLayout"
-        app:layout_anchorGravity="bottom|end|right"
-        app:maxImageSize="28dp"/>
+        app:layout_anchorGravity="top|end|left"
+        app:maxImageSize="28dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
