@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        app:contentScrim="@color/purple_200"
+        app:contentScrim="@color/purple_700"
         app:expandedTitleMarginBottom="20dp"
         app:expandedTitleMarginStart="15dp"
         app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
@@ -38,13 +38,26 @@
             android:layout_height="?actionBarSize"
             app:contentInsetStart="0dp"
             app:layout_collapseMode="pin"
-            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Suas lojas favoritas"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textAlignment="center"/>
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/appNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#32A9A9AE"
@@ -57,36 +70,16 @@
             android:orientation="vertical"
             android:padding="15dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp"
-                app:cardPreventCornerOverlap="false"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.appcompat.widget.SearchView
-                    android:id="@+id/search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:itemCount="3"
-                tools:listitem="@layout/res_item_favorite" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="3"
+        tools:listitem="@layout/res_item_favorite" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -96,10 +89,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/orange"
-        android:backgroundTintMode="add"
         android:elevation="5dp"
         android:src="@drawable/ic_baseline_menu_24"
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="top|end|left"
+        app:maxImageSize="28dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/orange"
+        android:elevation="5dp"
+        android:src="@drawable/ic_baseline_face_24"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="top|end|right"
+        app:maxImageSize="28dp" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/orange"
+        android:elevation="5dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_anchor="@id/appNestedScrollView"
+        app:layout_anchorGravity="bottom|end|right"
         app:maxImageSize="28dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
