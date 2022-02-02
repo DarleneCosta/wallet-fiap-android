@@ -11,7 +11,7 @@
 <com.google.android.material.appbar.AppBarLayout
     android:id="@+id/appBarLayout"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="200dp"
     android:fitsSystemWindows="true"
     android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
 
@@ -20,7 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        app:contentScrim="@color/purple_700"
+        app:contentScrim="@color/purple_200"
+        app:title="@string/title_favorite"
         app:expandedTitleMarginBottom="20dp"
         app:expandedTitleMarginStart="15dp"
         app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
@@ -38,19 +39,9 @@
             android:layout_height="?actionBarSize"
             app:contentInsetStart="0dp"
             app:layout_collapseMode="pin"
-            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" >
+            android:text="@string/title_favorite"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="Suas lojas favoritas"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textAlignment="center"/>
-        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.CollapsingToolbarLayout>
 
