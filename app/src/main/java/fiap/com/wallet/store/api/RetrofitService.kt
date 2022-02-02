@@ -1,7 +1,7 @@
-package fiap.com.wallet.api
+package fiap.com.wallet.store.api
 import retrofit2.http.GET
 import retrofit2.Call
-import fiap.com.wallet.models.StorePreference
+import fiap.com.wallet.store.models.StorePreference
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

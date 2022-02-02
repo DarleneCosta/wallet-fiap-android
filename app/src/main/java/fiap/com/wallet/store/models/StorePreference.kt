@@ -1,4 +1,4 @@
-package fiap.com.wallet.models
+package fiap.com.wallet.store.models
 
 data class StorePreference(
     var id: Int,

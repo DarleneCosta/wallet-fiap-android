@@ -1,9 +1,9 @@
-package fiap.com.wallet.viewmodel.store
+package fiap.com.wallet.store.store
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import fiap.com.wallet.models.StorePreference
-import fiap.com.wallet.repositories.StoreRepository
+import fiap.com.wallet.store.models.StorePreference
+import fiap.com.wallet.store.repositories.StoreRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

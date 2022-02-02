@@ -1,4 +1,4 @@
-package fiap.com.wallet
+package fiap.com.wallet.store
 
 import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
@@ -7,13 +7,13 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import fiap.com.wallet.adapters.StoreAdapter
-import fiap.com.wallet.api.RetrofitService
+import fiap.com.wallet.R
+import fiap.com.wallet.store.adapters.StoreAdapter
+import fiap.com.wallet.store.api.RetrofitService
 import fiap.com.wallet.databinding.ActivityStoreBinding
-import fiap.com.wallet.repositories.StoreRepository
-import fiap.com.wallet.viewmodel.store.StoreViewModel
-import fiap.com.wallet.viewmodel.store.StoreViewModelFactory
-import java.io.Console
+import fiap.com.wallet.store.repositories.StoreRepository
+import fiap.com.wallet.store.store.StoreViewModel
+import fiap.com.wallet.store.store.StoreViewModelFactory
 
 class StoreActivity : AppCompatActivity() {
 

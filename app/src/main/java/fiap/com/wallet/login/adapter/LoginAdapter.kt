@@ -1,10 +1,10 @@
-package fiap.com.wallet.adapters
+package fiap.com.wallet.login.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import fiap.com.wallet.databinding.ResItemFavoriteBinding
-import fiap.com.wallet.models.StorePreference
+import fiap.com.wallet.store.models.StorePreference
 
 class StoreAdapter(private val onItemClicked: (StorePreference)->Unit) :RecyclerView.Adapter<StoreViewHolder>() {
     private var stores= mutableListOf<StorePreference>()

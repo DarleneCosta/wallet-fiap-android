@@ -1,8 +1,8 @@
-package fiap.com.wallet.viewmodel.store
+package fiap.com.wallet.store.store
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import fiap.com.wallet.repositories.StoreRepository
+import fiap.com.wallet.store.repositories.StoreRepository
 import java.lang.IllegalArgumentException
 
 class StoreViewModelFactory constructor(private val repository: StoreRepository): ViewModelProvider.Factory {

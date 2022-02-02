@@ -1,4 +1,4 @@
-package fiap.com.wallet.api
+package fiap.com.wallet.store.api
 
 import okhttp3.Interceptor
 import okhttp3.Response
