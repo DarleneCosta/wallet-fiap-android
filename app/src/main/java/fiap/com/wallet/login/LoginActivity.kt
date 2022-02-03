@@ -1,8 +1,8 @@
 package fiap.com.wallet.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -15,6 +15,7 @@ import fiap.com.wallet.login.dto.viewmodel.LoginViewModel
 import fiap.com.wallet.login.dto.viewmodel.LoginViewModelFactory
 import fiap.com.wallet.login.repository.LoginRepository
 import fiap.com.wallet.login.rest.RetrofitService
+import fiap.com.wallet.wallet.WalletActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,12 +37,16 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun observeLoginViewModel() {
-        viewModel.liveDataSignUp.observe(this, Observer { token ->
-            if (token.isEmpty()) {
+        viewModel.liveDataSignUp.observe(this, Observer { loginResponseDTO ->
+            if (loginResponseDTO == null) {
                 Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
             } else {
-                salvarToken(token)
+                salvarToken(loginResponseDTO.token)
                 Toast.makeText(this, "Logado com sucesso!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, WalletActivity::class.java)
+                intent.putExtra("CPF", loginResponseDTO.cpf);
+                startActivity(intent)
+                finish()
             }
         })
     }
