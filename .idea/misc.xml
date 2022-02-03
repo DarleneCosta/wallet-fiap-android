@@ -15,8 +15,11 @@
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_store.xml" value="0.2" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/res_item_favorite.xml" value="0.4" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3015" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3015" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/activity_store.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/home_activity.xml" value="0.32864583333333336" />
       </map>
     </option>
   </component>

@@ -47,11 +47,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login(view: View) {
-        println("entrou aqui")
-        val texto1 = findViewById<EditText>(R.id.edt_email).text.toString();
-        val texto2 = findViewById<EditText>(R.id.edt_password).text.toString();
+        val cpf = findViewById<EditText>(R.id.cpf).text.toString();
+        val password = findViewById<EditText>(R.id.edt_password).text.toString();
 
-        viewModel.login(LoginDTO(texto1, texto2))
+        viewModel.login(LoginDTO(cpf, password))
 
     }
 

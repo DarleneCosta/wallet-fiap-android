@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:circularflow_defaultRadius="20sp"
+    app:circularflow_radiusInDP="35sp"
+    tools:context=".home.HomeActivity">
+
+
+    <LinearLayout
+        android:id="@+id/view2"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="417dp"
+        android:layout_height="552dp"
+        android:layout_marginBottom="1dp"
+        android:background="#1F91FB"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="288dp"
+            android:layout_height="277dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Seja bem-vindo \n  à sua carteira digital!   \n\nAqui você compra\nem suas lojas favoritas\ne ganha na hora cashback\n em sua carteira!"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="61dp"
+            tools:layout_editor_absoluteY="77dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:srcCompat="@mipmap/ic_wallet"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="354dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="413dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2">
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="343dp"
+            android:layout_height="69dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Já sou cadastrado"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/white"
+            android:textColorLink="@color/white"
+            app:circularflow_defaultRadius="10sp"
+            app:cornerRadius="30dp"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="558dp" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="343dp"
+            android:layout_height="69dp"
+            android:backgroundTint="#FEBA0D"
+            android:text="Quero me cadastrar"
+            app:circularflow_defaultRadius="185sp"
+            app:cornerRadius="30dp"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="637dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
