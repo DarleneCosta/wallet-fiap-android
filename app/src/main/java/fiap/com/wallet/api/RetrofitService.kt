@@ -6,9 +6,10 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 interface RetrofitService {
 
-    @GET("preference/44556")//TODO: CPF COMO PEGAR ESTA INFORMAÇÃO
+    @GET("preference/123456789")//TODO: CPF COMO PEGAR ESTA INFORMAÇÃO
     fun getAllStore(): Call<List<StorePreference>>
 
     companion object{
@@ -18,7 +19,7 @@ interface RetrofitService {
 
         private val retrofitService: RetrofitService by lazy{
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://3.140.201.92")//TODO: USAR VARIAVEL GLOBAL
+                .baseUrl("http://34.134.40.101:8080")//TODO: USAR VARIAVEL GLOBAL
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

@@ -7,7 +7,7 @@ class MyInterceptor:Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
     val request = chain.request()
         .newBuilder()
-        .addHeader("Authorization","Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0NDU1NiIsImV4cCI6MTY0NDQwNzYzOX0.GIEj9AgHVnOWQ8CP78OcoWaxljaFnKwwQn-gMwKJu-IlHvmPKa1pDQgSQ86QJpjjLL5xua9VdiAvnNIyqfzTMg")
+        .addHeader("Authorization","Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2NDQ4NzI5NzJ9.M7wJXELZTM21hWPsxgqXp5LdrwSALP3ZHgxmACBZ4vT4AJaLbtHfEpieVJ1wFnXLprLd3-eAkM1TyEi4Yg9o-g")
         .build()
 
         return chain.proceed(request)

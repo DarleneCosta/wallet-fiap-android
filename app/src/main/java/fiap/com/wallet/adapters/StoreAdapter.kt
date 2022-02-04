@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import fiap.com.wallet.databinding.ResItemFavoriteBinding
 import fiap.com.wallet.models.StorePreference
 
+
+
 class StoreAdapter(private val onItemClicked: (StorePreference)->Unit) :RecyclerView.Adapter<StoreViewHolder>() {
     private var stores= mutableListOf<StorePreference>()
 
@@ -35,9 +37,9 @@ class StoreAdapter(private val onItemClicked: (StorePreference)->Unit) :Recycler
 class StoreViewHolder(val binding: ResItemFavoriteBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(store: StorePreference, onItemClicked: (StorePreference) -> Unit) {
-
+//TODO: colocar o icone da loja
         binding.name.text = store.name
-        binding.percent.text = store.percent.toString()
+        binding.percent.text = store.percent.toString() + "%"
 
         itemView.setOnClickListener {
             onItemClicked(store)

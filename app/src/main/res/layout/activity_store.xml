@@ -85,9 +85,10 @@
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="top|end|left"
         app:maxImageSize="28dp"
-        />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_editUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -97,8 +98,11 @@
         android:src="@drawable/ic_baseline_face_24"
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="top|end|right"
-        app:maxImageSize="28dp" />
+        app:maxImageSize="28dp"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_addStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -108,5 +112,6 @@
         android:src="@drawable/ic_baseline_add_24"
         app:layout_anchor="@id/appNestedScrollView"
         app:layout_anchorGravity="bottom|end|right"
-        app:maxImageSize="28dp" />
+        app:maxImageSize="28dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

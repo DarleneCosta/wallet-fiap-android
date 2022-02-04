@@ -69,4 +69,6 @@ class StoreActivity : AppCompatActivity() {
       //TODO: MODAL DE CONFIRMACAO PARA REMOVER DA LISTA
 
     }
+
+
 }
