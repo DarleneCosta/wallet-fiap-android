@@ -37,9 +37,9 @@
             android:id="@+id/toolbarLayout"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
+            android:text="@string/title_favorite"
             app:contentInsetStart="0dp"
             app:layout_collapseMode="pin"
-            android:text="@string/title_favorite"
             app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
 
@@ -84,7 +84,8 @@
         android:src="@drawable/ic_baseline_menu_24"
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="top|end|left"
-        app:maxImageSize="28dp" />
+        app:maxImageSize="28dp"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
