@@ -14,7 +14,6 @@ import retrofit2.Response
 class LoginViewModel constructor(private val repository: LoginRepository) : ViewModel() {
 
     val liveDataSignUp = MutableLiveData<LoginResponseDTO>()
-    val errorMessage = MutableLiveData<String>()
 
     fun login(login: LoginDTO) {
         val request = repository.login(login)
@@ -27,13 +26,10 @@ class LoginViewModel constructor(private val repository: LoginRepository) : View
                     liveDataSignUp.postValue(null)
                     return;
                 } else {
-                    val gson = Gson()
-                    println("meu teste")
                     var body = response.body()
                     if (body != null) {
-                        liveDataSignUp.postValue(LoginResponseDTO(body.token,body.cpf))
+                        liveDataSignUp.postValue(LoginResponseDTO(body.token, body.cpf))
                     }
-
                 }
             }
 

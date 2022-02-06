@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import fiap.com.wallet.R
 import fiap.com.wallet.login.LoginActivity
+import fiap.com.wallet.signup.SignUpActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnSignUp).setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
             finish()
         }

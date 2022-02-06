@@ -4,8 +4,7 @@ import fiap.com.wallet.BuildConfig
 import fiap.com.wallet.login.dto.LoginDTO
 import fiap.com.wallet.login.dto.LoginResponseDTO
 import fiap.com.wallet.login.dto.SignUpDTO
-import fiap.com.wallet.login.models.SignUp
-import okhttp3.ResponseBody
+import fiap.com.wallet.signup.model.SignUp
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -15,7 +14,7 @@ import retrofit2.http.POST
 interface RetrofitService {
 
     @POST("/user/signup")
-    fun signUp(signUp: SignUp): Call<SignUpDTO>
+    fun signUp(@Body signUp: SignUp): Call<SignUpDTO>
 
     @POST("/login")
     fun login(@Body loginDTO: LoginDTO): Call<LoginResponseDTO>

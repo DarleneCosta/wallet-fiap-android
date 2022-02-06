@@ -23,6 +23,7 @@
         <activity android:name=".login.LoginActivity"/>
         <activity android:name=".store.StoreActivity" />
         <activity android:name=".wallet.WalletActivity" />
+        <activity android:name=".signup.SignUpActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
