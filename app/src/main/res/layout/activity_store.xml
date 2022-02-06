@@ -6,7 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".StoreActivity">
+
+
 
 <com.google.android.material.appbar.AppBarLayout
     android:id="@+id/appBarLayout"
@@ -47,11 +50,12 @@
 
 </com.google.android.material.appbar.AppBarLayout>
 
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/appNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#32A9A9AE"
+        android:background="@color/background"
         android:overScrollMode="never"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
@@ -114,4 +118,7 @@
         app:layout_anchorGravity="bottom|end|right"
         app:maxImageSize="28dp"
         tools:ignore="SpeakableTextPresentCheck" />
+
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

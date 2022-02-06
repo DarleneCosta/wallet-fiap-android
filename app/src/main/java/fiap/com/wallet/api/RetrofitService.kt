@@ -1,16 +1,17 @@
 package fiap.com.wallet.api
-import retrofit2.http.GET
-import retrofit2.Call
 import fiap.com.wallet.models.StorePreference
 import okhttp3.OkHttpClient
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
 
 
 interface RetrofitService {
 
-    @GET("preference/123456789")//TODO: CPF COMO PEGAR ESTA INFORMAÇÃO
+    @GET("preference/11111111111")//TODO: CPF COMO PEGAR ESTA INFORMAÇÃO
     fun getAllStore(): Call<List<StorePreference>>
+
 
     companion object{
         private val client=OkHttpClient.Builder().apply {
@@ -25,12 +26,13 @@ interface RetrofitService {
                 .build()
 
             retrofit.create(RetrofitService::class.java)
-
         }
 
         fun getInstance (): RetrofitService {
             return retrofitService
         }
+
+
     }
 
 }

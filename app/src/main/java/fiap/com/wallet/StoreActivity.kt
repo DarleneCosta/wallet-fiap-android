@@ -1,10 +1,10 @@
 package fiap.com.wallet
 
 import android.content.ContentValues.TAG
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import fiap.com.wallet.adapters.StoreAdapter
@@ -13,7 +13,6 @@ import fiap.com.wallet.databinding.ActivityStoreBinding
 import fiap.com.wallet.repositories.StoreRepository
 import fiap.com.wallet.viewmodel.store.StoreViewModel
 import fiap.com.wallet.viewmodel.store.StoreViewModelFactory
-import java.io.Console
 
 class StoreActivity : AppCompatActivity() {
 
@@ -23,9 +22,7 @@ class StoreActivity : AppCompatActivity() {
 
     private val retrofitService = RetrofitService.getInstance()
 
-    private val adapter = StoreAdapter{store->
-        deleteStore(store.id)
-    }
+    private val adapter = StoreAdapter(this)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +62,7 @@ class StoreActivity : AppCompatActivity() {
     }
 
     private fun deleteStore(id: Int) {
-
+        println("foi?")
       //TODO: MODAL DE CONFIRMACAO PARA REMOVER DA LISTA
 
     }
