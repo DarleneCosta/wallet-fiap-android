@@ -2,9 +2,15 @@
   <library name="Gradle: androidx.palette:palette:1.0.0@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c8a57304bff3762d83da5f7eb57c9c1c/transformed/palette-1.0.0/res" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8aa3c40d2c5c167b1684da515c45d915/transformed/palette-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8aa3c40d2c5c167b1684da515c45d915/transformed/palette-1.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8aa3c40d2c5c167b1684da515c45d915/transformed/palette-1.0.0/AndroidManifest.xml" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1a600b20bf0499e9511174b0bbceee2d/transformed/palette-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1a600b20bf0499e9511174b0bbceee2d/transformed/palette-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1a600b20bf0499e9511174b0bbceee2d/transformed/palette-1.0.0/res" />
+>>>>>>> 5e2c3bdf96f582677918b77f4b4ecf83e1ab75a8
     </CLASSES>
     <JAVADOC />
     <SOURCES>

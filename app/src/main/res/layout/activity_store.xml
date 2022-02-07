@@ -6,52 +6,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+<<<<<<< HEAD
     tools:context=".store.StoreActivity">
+=======
+    android:orientation="vertical"
+    tools:context=".StoreActivity">
+>>>>>>> 5e2c3bdf96f582677918b77f4b4ecf83e1ab75a8
 
-<com.google.android.material.appbar.AppBarLayout
-    android:id="@+id/appBarLayout"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:fitsSystemWindows="true"
-    android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
-
-    <com.google.android.material.appbar.CollapsingToolbarLayout
-        android:id="@+id/collapsingToolbar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:fitsSystemWindows="true"
-        app:contentScrim="@color/purple_200"
-        app:title="@string/title_favorite"
-        app:expandedTitleMarginBottom="20dp"
-        app:expandedTitleMarginStart="15dp"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
 
-        <View
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/title_background"
-            />
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/purple_200"
+            app:title="@string/title_preference"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleMarginStart="15dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            app:contentInsetStart="0dp"
-            app:layout_collapseMode="pin"
-            android:text="@string/title_favorite"
-            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/title_background"
+                />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="@string/title_preference"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
 
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-</com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/appNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#32A9A9AE"
+        android:background="@color/background"
         android:overScrollMode="never"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
@@ -70,23 +75,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="3"
-        tools:listitem="@layout/res_item_favorite" />
+        tools:listitem="@layout/res_item_preference" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@color/orange"
-        android:elevation="5dp"
-        android:src="@drawable/ic_baseline_menu_24"
-        app:layout_anchor="@id/appBarLayout"
-        app:layout_anchorGravity="top|end|left"
-        app:maxImageSize="28dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_editUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -96,8 +92,11 @@
         android:src="@drawable/ic_baseline_face_24"
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="top|end|right"
-        app:maxImageSize="28dp" />
+        app:maxImageSize="28dp"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_addStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -107,5 +106,9 @@
         android:src="@drawable/ic_baseline_add_24"
         app:layout_anchor="@id/appNestedScrollView"
         app:layout_anchorGravity="bottom|end|right"
-        app:maxImageSize="28dp" />
+        app:maxImageSize="28dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
