@@ -5,23 +5,14 @@
       <map>
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/baseline_face_24.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/bg_radius.xml" value="0.1345" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/btn_rounded.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_face_24.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1345" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/radius.xml" value="0.128" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/title_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/actitivity_store.xml" value="0.13385416666666666" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_add_preference.xml" value="0.1171875" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_add_store.xml" value="0.2" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_main.xml" value="0.259375" />
-<<<<<<< HEAD
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_store.xml" value="0.2" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/res_item_favorite.xml" value="0.4" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3015" />
@@ -40,30 +31,13 @@
         <entry key="app/src/main/res/layout/home_activity.xml" value="0.32864583333333336" />
         <entry key="app/src/main/res/layout/res_item_favorite.xml" value="0.32518115942028986" />
         <entry key="app/src/main/res/layout/res_item_wallet.xml" value="0.32518115942028986" />
-=======
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_store.xml" value="0.1" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/dialog_add.xml" value="0.264" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/dialog_delete.xml" value="0.264" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/fragment_delete.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/fragment_user.xml" value="0.259375" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/res_item_favorite.xml" value="0.25" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2755208333333333" />
->>>>>>> 5e2c3bdf96f582677918b77f4b4ecf83e1ab75a8
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.2" />
-      </ProjectState>
-    </option>
   </component>
 </project>

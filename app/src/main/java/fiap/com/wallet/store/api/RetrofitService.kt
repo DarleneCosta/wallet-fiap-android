@@ -1,16 +1,9 @@
-<<<<<<< HEAD:app/src/main/java/fiap/com/wallet/store/api/RetrofitService.kt
 package fiap.com.wallet.store.api
+import fiap.com.wallet.models.ResponseWallet
 import retrofit2.http.GET
 import retrofit2.Call
 import fiap.com.wallet.store.models.StorePreference
 import okhttp3.OkHttpClient
-=======
-package fiap.com.wallet.api
-
-import fiap.com.wallet.models.ResponseWallet
-import fiap.com.wallet.models.StorePreference
-import retrofit2.Call
->>>>>>> 5e2c3bdf96f582677918b77f4b4ecf83e1ab75a8:app/src/main/java/fiap/com/wallet/api/RetrofitService.kt
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*

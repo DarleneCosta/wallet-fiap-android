@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import fiap.com.wallet.R
-import fiap.com.wallet.databinding.ResItemFavoriteBinding
 import fiap.com.wallet.store.models.StorePreference
 
 

@@ -6,12 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-<<<<<<< HEAD
+    android:orientation="vertical"
     tools:context=".store.StoreActivity">
 =======
-    android:orientation="vertical"
-    tools:context=".StoreActivity">
->>>>>>> 5e2c3bdf96f582677918b77f4b4ecf83e1ab75a8
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"

@@ -2,14 +2,9 @@ package fiap.com.wallet.store.store
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-<<<<<<< HEAD:app/src/main/java/fiap/com/wallet/store/store/StoreViewModel.kt
+import fiap.com.wallet.models.ResponseWallet
 import fiap.com.wallet.store.models.StorePreference
 import fiap.com.wallet.store.repositories.StoreRepository
-=======
-import fiap.com.wallet.models.ResponseWallet
-import fiap.com.wallet.models.StorePreference
-import fiap.com.wallet.repositories.StoreRepository
->>>>>>> 5e2c3bdf96f582677918b77f4b4ecf83e1ab75a8:app/src/main/java/fiap/com/wallet/viewmodel/store/StoreViewModel.kt
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
