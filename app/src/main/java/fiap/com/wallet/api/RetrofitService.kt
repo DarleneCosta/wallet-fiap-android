@@ -1,27 +1,33 @@
 package fiap.com.wallet.api
+
+import fiap.com.wallet.models.ResponseWallet
 import fiap.com.wallet.models.StorePreference
-import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.Headers
+import retrofit2.http.Path
 
 
 interface RetrofitService {
 
     @GET("preference/11111111111")//TODO: CPF COMO PEGAR ESTA INFORMAÇÃO
+    @Headers( "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMTExMTExMTExMSIsImV4cCI6MTY0NTA5MTE1NX0.TtxikFKh8JwDsSXzqa7-hcf2vulAwaVGnO8AUhtmJ3daU_pfOyIJG_C-p62Hf4Zf4DMiomblKikAXKfqfdOnNA")
     fun getAllStore(): Call<List<StorePreference>>
 
+    @DELETE("preference/{cpf}/{id}")
+    @Headers("Accept:application/json", "Content-Type:application/json",
+        "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMTExMTExMTExMSIsImV4cCI6MTY0NTA5MTE1NX0.TtxikFKh8JwDsSXzqa7-hcf2vulAwaVGnO8AUhtmJ3daU_pfOyIJG_C-p62Hf4Zf4DMiomblKikAXKfqfdOnNA")
+    fun removeStorePreference(@Path ("cpf")cpf:String, @Path ("id")id:Int): Call<ResponseWallet>
 
     companion object{
-        private val client=OkHttpClient.Builder().apply {
-            addInterceptor(MyInterceptor())
-        }.build()
+        private const val BASE_URL = "http://34.134.40.101:8080"//BuildConfig.HOST
 
         private val retrofitService: RetrofitService by lazy{
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://34.134.40.101:8080")//TODO: USAR VARIAVEL GLOBAL
-                .client(client)
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
@@ -31,7 +37,6 @@ interface RetrofitService {
         fun getInstance (): RetrofitService {
             return retrofitService
         }
-
 
     }
 
