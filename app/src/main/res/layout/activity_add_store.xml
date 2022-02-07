@@ -35,11 +35,15 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="bottom|center"
-                android:background="@drawable/bg_radius"
                 app:circularflow_defaultRadius="10sp"
                 app:contentInsetStart="0dp"
                 app:cornerRadius="30dp"
                 app:layout_collapseMode="pin"
+                app:closeIcon="@drawable/ic_baseline_search_24"
+                app:searchHintIcon="@drawable/ic_baseline_search_24"
+                app:searchIcon="@drawable/ic_baseline_search_24"
+                android:textStyle="bold"
+                android:background="@drawable/bg_radius"
                 app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
 
