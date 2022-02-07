@@ -25,7 +25,7 @@ class StoreAdapter(private var context: Context) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ResItemFavoriteBinding.inflate(inflater, parent, false)
-        val view = inflater.inflate(R.layout.res_item_favorite, parent, false)
+        val view = inflater.inflate(R.layout.res_item_preference, parent, false)
         return StoreViewHolder(binding)
     }
 
@@ -64,7 +64,7 @@ class StoreAdapter(private var context: Context) :
                 dialog.show()*/
 
                 val builder = AlertDialog.Builder(it.context)
-                builder.setTitle("Confirma exclusão")
+                builder.setTitle(R.string.title_delete.toString())
                 builder.setMessage(title)
                 builder.setPositiveButton("Sim"){dialog, which ->
 

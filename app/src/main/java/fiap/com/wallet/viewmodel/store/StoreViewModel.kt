@@ -30,6 +30,26 @@ class StoreViewModel constructor(private val repository: StoreRepository):ViewMo
         })
     }
 
+    fun addStorePreference(cpf:String, id:Int){
+        val request = repository.addStorePreference(cpf, id)
+        request.enqueue(object :Callback<ResponseWallet?>{
+            override fun onResponse(
+                call: Call<ResponseWallet?>,
+                response: Response<ResponseWallet?>
+            ) {
+                if(response.isSuccessful){
+                    responseWallet.postValue(response.body())
+                }else{
+                    responseWallet.postValue(null)
+                }
+            }
+            override fun onFailure(call: Call<ResponseWallet?>, t: Throwable) {
+                errorMessage.postValue(t.message)
+            }
+
+        })
+    }
+
     fun removeStorePreference(cpf:String, id:Int){
         val request = repository.removeStorePreference(cpf, id)
         request.enqueue(object :Callback<ResponseWallet?>{
@@ -43,7 +63,6 @@ class StoreViewModel constructor(private val repository: StoreRepository):ViewMo
                     responseWallet.postValue(null)
                 }
             }
-
             override fun onFailure(call: Call<ResponseWallet?>, t: Throwable) {
                 errorMessage.postValue(t.message)
             }

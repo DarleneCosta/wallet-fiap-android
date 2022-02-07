@@ -10,9 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import fiap.com.wallet.adapters.StoreAdapter
 import fiap.com.wallet.api.RetrofitService
 import fiap.com.wallet.databinding.ActivityStoreBinding
+import fiap.com.wallet.models.StorePreference
 import fiap.com.wallet.repositories.StoreRepository
 import fiap.com.wallet.viewmodel.store.StoreViewModel
 import fiap.com.wallet.viewmodel.store.StoreViewModelFactory
+
 
 class StoreActivity : AppCompatActivity() {
 
@@ -24,18 +26,16 @@ class StoreActivity : AppCompatActivity() {
 
     private val adapter = StoreAdapter(this)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_store)
+
         binding = ActivityStoreBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         viewModel =
             ViewModelProvider(this, StoreViewModelFactory(StoreRepository(retrofitService))).get(
                 StoreViewModel::class.java
             )
-
         binding.recyclerview.adapter = adapter
 
     }
@@ -56,16 +56,14 @@ class StoreActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
         viewModel.getAllStore()
-
     }
 
-    private fun deleteStore(id: Int) {
-        println("foi?")
-      //TODO: MODAL DE CONFIRMACAO PARA REMOVER DA LISTA
-
+    private fun createStorePreference(store:StorePreference) {
+        val cpf  = "11111111111"
+        viewModel.addStorePreference(cpf,store.id)
     }
+
 
 
 }

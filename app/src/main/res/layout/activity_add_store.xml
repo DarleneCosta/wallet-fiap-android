@@ -22,24 +22,23 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="@color/purple_200"
-            app:title="@string/title_preference"
             app:expandedTitleMarginBottom="20dp"
             app:expandedTitleMarginStart="15dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="bottom"
-                android:background="@drawable/title_background"
-                />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbarLayout"
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                android:text="@string/title_preference"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="bottom|center"
+                android:background="@drawable/bg_radius"
+                app:circularflow_defaultRadius="10sp"
                 app:contentInsetStart="0dp"
+                app:cornerRadius="30dp"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
@@ -77,6 +76,7 @@
     </androidx.core.widget.NestedScrollView>
 
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_editUser"
         android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
         android:background="@color/white"
         android:backgroundTint="@color/orange"
         android:elevation="5dp"
-        android:src="@drawable/ic_baseline_add_24"
+        android:src="@drawable/ic_baseline_clear_24"
         app:layout_anchor="@id/appNestedScrollView"
         app:layout_anchorGravity="bottom|end|right"
         app:maxImageSize="28dp"

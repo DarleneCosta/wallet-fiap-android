@@ -13,10 +13,13 @@
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/radius.xml" value="0.128" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/drawable/title_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/actitivity_store.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_add_preference.xml" value="0.1171875" />
+        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_add_store.xml" value="0.2" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_main.xml" value="0.259375" />
-        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_store.xml" value="0.2" />
+        <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_store.xml" value="0.1" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/dialog_add.xml" value="0.264" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/dialog_delete.xml" value="0.264" />
         <entry key="..\:/Users/darl_/AndroidStudioProjects/Wallet/app/src/main/res/layout/fragment_delete.xml" value="0.18333333333333332" />

@@ -5,10 +5,7 @@ import fiap.com.wallet.models.StorePreference
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.Path
+import retrofit2.http.*
 
 
 interface RetrofitService {
@@ -16,6 +13,12 @@ interface RetrofitService {
     @GET("preference/11111111111")//TODO: CPF COMO PEGAR ESTA INFORMAÇÃO
     @Headers( "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMTExMTExMTExMSIsImV4cCI6MTY0NTA5MTE1NX0.TtxikFKh8JwDsSXzqa7-hcf2vulAwaVGnO8AUhtmJ3daU_pfOyIJG_C-p62Hf4Zf4DMiomblKikAXKfqfdOnNA")
     fun getAllStore(): Call<List<StorePreference>>
+
+    @POST("preference/{cpf}/{id}")
+    @Headers("Accept:application/json", "Content-Type:application/json",
+        "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMTExMTExMTExMSIsImV4cCI6MTY0NTA5MTE1NX0.TtxikFKh8JwDsSXzqa7-hcf2vulAwaVGnO8AUhtmJ3daU_pfOyIJG_C-p62Hf4Zf4DMiomblKikAXKfqfdOnNA")
+    fun addStorePreference(@Path ("cpf")cpf:String, @Path ("id")id:Int): Call<ResponseWallet>
+
 
     @DELETE("preference/{cpf}/{id}")
     @Headers("Accept:application/json", "Content-Type:application/json",
