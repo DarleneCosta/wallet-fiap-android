@@ -24,7 +24,7 @@ class StoreActivity : AppCompatActivity() {
 
     private val retrofitService = RetrofitService.getInstance()
 
-    private val adapter = StoreAdapter(this)
+    private val adapter = StoreAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

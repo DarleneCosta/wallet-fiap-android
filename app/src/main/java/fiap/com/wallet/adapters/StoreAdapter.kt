@@ -1,19 +1,18 @@
 package fiap.com.wallet.adapters
 
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import fiap.com.wallet.R
-import fiap.com.wallet.databinding.ResItemFavoriteBinding
+import fiap.com.wallet.databinding.ResItemPreferenceBinding
 import fiap.com.wallet.models.StorePreference
 
 
 
 
-class StoreAdapter(private var context: Context) :
+class StoreAdapter() :
     RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     private var stores = mutableListOf<StorePreference>()
 
@@ -24,8 +23,8 @@ class StoreAdapter(private var context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ResItemFavoriteBinding.inflate(inflater, parent, false)
-        val view = inflater.inflate(R.layout.res_item_preference, parent, false)
+        val binding = ResItemPreferenceBinding.inflate(inflater, parent, false)
+        //val view = inflater.inflate(R.layout.res_item_preference, parent, false)
         return StoreViewHolder(binding)
     }
 
@@ -40,7 +39,7 @@ class StoreAdapter(private var context: Context) :
     }
 
 
-    class StoreViewHolder(private val binding: ResItemFavoriteBinding) :
+    class StoreViewHolder(private val binding: ResItemPreferenceBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(store: StorePreference) {
@@ -50,6 +49,7 @@ class StoreAdapter(private var context: Context) :
             binding.btnDelete.setOnClickListener {
 
                 val title = "Você deseja excluir a loja " +  store.name +"?"
+
 /*
                //todo delete costumizado
                 val dialogDelete =
