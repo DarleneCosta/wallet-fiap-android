@@ -45,11 +45,12 @@ class StoreAdapter(private var context: Context) :
             binding.percent.text = store.percent.toString() + "%"
             binding.btnDelete.setOnClickListener {
 
-                val title = "Você deseja excluir a loja " +  store.name +"?"
+                val title = "Você deseja excluir a loja " + store.name + "?"
 
                 val builder = AlertDialog.Builder(it.context)
                 builder.setTitle(R.string.title_delete.toString())
                 builder.setMessage(title)
+
                 builder.setPositiveButton("Sim"){_, _ ->
 
                     deleteStoreFavorite(store)
@@ -64,7 +65,7 @@ class StoreAdapter(private var context: Context) :
             }
         }
 
-        fun deleteStoreFavorite(store: StorePreference){
+        fun deleteStoreFavorite(store: StorePreference) {
             println(store.id)
         }
 
