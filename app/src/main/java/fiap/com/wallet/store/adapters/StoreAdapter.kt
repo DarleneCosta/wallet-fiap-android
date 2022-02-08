@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import fiap.com.wallet.R
+import fiap.com.wallet.databinding.ResItemPreferenceBinding
 import fiap.com.wallet.store.models.StorePreference
-
-
 
 
 class StoreAdapter(private var context: Context) :
@@ -23,7 +22,7 @@ class StoreAdapter(private var context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ResItemFavoriteBinding.inflate(inflater, parent, false)
+        val binding = ResItemPreferenceBinding.inflate(inflater, parent, false)
         val view = inflater.inflate(R.layout.res_item_preference, parent, false)
         return StoreViewHolder(binding)
     }
@@ -33,13 +32,11 @@ class StoreAdapter(private var context: Context) :
         holder.bind(store)
     }
 
-
     override fun getItemCount(): Int {
         return stores.size
     }
 
-
-    class StoreViewHolder(private val binding: ResItemFavoriteBinding) :
+    class StoreViewHolder(private val binding: ResItemPreferenceBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(store: StorePreference) {
@@ -49,23 +46,11 @@ class StoreAdapter(private var context: Context) :
             binding.btnDelete.setOnClickListener {
 
                 val title = "Você deseja excluir a loja " +  store.name +"?"
-/*
-               //todo delete costumizado
-                val dialogDelete =
-                   LayoutInflater.from(it.context).inflate(R.layout.dialog_delete, null)
-
-                val builder = AlertDialog.Builder(it.context)
-                    .setView(dialogDelete)
-                    .setPositiveButton(R.string.alert_dialog_ok,
-                        DialogInterface.OnClickListener { dialog, which -> deleteStoreFavorite(store)})
-
-                val dialog: AlertDialog = builder.create()
-                dialog.show()*/
 
                 val builder = AlertDialog.Builder(it.context)
                 builder.setTitle(R.string.title_delete.toString())
                 builder.setMessage(title)
-                builder.setPositiveButton("Sim"){dialog, which ->
+                builder.setPositiveButton("Sim"){_, _ ->
 
                     deleteStoreFavorite(store)
 

@@ -8,7 +8,6 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".store.StoreActivity">
-=======
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"

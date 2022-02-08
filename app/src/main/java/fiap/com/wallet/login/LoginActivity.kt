@@ -53,13 +53,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login(view: View) {
-        val cpf = findViewById<EditText>(R.id.cpf).text.toString();
-        val password = findViewById<EditText>(R.id.edt_password).text.toString();
-
+        val cpf = findViewById<EditText>(R.id.cpf).text.toString()
+        val password = findViewById<EditText>(R.id.edt_password).text.toString()
         viewModel.login(LoginDTO(cpf, password))
-
     }
-
 
     fun salvarToken(token: String) {
         val sharedPreferences = getSharedPreferences("token", MODE_PRIVATE).edit()

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:circularflow_defaultRadius="20sp"
     app:circularflow_radiusInDP="35sp"
-    tools:context=".home.HomeActivity">
+    tools:context=".home.HomeActivity"
+    android:background="@color/background">
 
 
     <LinearLayout
@@ -48,6 +49,7 @@
     <LinearLayout
         android:id="@+id/view"
         class="androidx.appcompat.widget.ActionMenuView"
+        android:color="@color/background"
         android:layout_width="413dp"
         android:layout_height="219dp"
         android:layout_marginTop="1dp"

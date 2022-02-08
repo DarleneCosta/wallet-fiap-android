@@ -41,7 +41,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout1">
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        android:textColor="@color/black">
 
         <EditText
             android:id="@+id/txtNome"
@@ -50,7 +51,10 @@
             android:layout_margin="15dp"
             android:background="@drawable/ic_rounded_corner"
             android:ems="10"
-            android:hint="  Nome"
+            android:textColor="@color/black"
+            android:textColorHint ="@color/hint"
+            android:hint="Nome"
+            android:paddingLeft="10dp"
             android:inputType="text" />
 
         <EditText
@@ -61,8 +65,11 @@
             android:width="386dp"
             android:background="@drawable/ic_rounded_corner"
             android:ems="10"
-            android:hint="  Email"
-            android:inputType="textEmailAddress" />
+            android:paddingLeft="10dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint ="@color/hint"/>
 
         <EditText
             android:id="@+id/txtCpf"
@@ -72,8 +79,11 @@
             android:width="386dp"
             android:background="@drawable/ic_rounded_corner"
             android:ems="10"
-            android:hint="  CPF"
-            android:inputType="number" />
+            android:paddingLeft="10dp"
+            android:hint="CPF"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textColorHint ="@color/hint"/>
 
         <EditText
             android:id="@+id/txtSenha"
@@ -83,8 +93,10 @@
             android:width="386dp"
             android:background="@drawable/ic_rounded_corner"
             android:ems="10"
-            android:hint="  Senha"
-            android:inputType="textPassword" />
+            android:paddingLeft="10dp"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:textColorHint ="@color/hint"/>
 
         <Switch
             android:id="@+id/swtNotification"
@@ -104,7 +116,7 @@
         android:layout_height="150dp"
         android:layout_margin="0dp"
         android:layout_marginTop="15dp"
-        android:background="#F3F3F3"
+        android:background="@color/background"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
