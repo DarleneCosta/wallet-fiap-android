@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Wallet</string>
+    <string name="title_preference">Suas lojas favoritas</string>
+    <string name="title_delete">Confirma Exclusão</string>
+    <string name="subtitle_delete">Remove a loja da sua lista?</string>
+    <string name="alert_dialog_ok"/>
+    <string name="alert_dialog_cancel"/>
+</resources>
