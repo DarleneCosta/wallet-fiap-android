@@ -34,7 +34,6 @@ class SignUpActivity : AppCompatActivity() {
                 SignUpViewModel::class.java
             )
 
-
         observeViewModel()
 
         findViewById<Button>(R.id.btnSignUp).setOnClickListener {
@@ -46,8 +45,6 @@ class SignUpActivity : AppCompatActivity() {
 
             viewModel.signUp(SignUp(nome, email, cpf, password, switch))
         }
-
-
     }
 
     private fun observeViewModel() {

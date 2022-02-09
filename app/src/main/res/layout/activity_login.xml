@@ -6,8 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".login.LoginActivity"
-    android:background="@color/background">
-
+        android:background="@color/background">
 
     <LinearLayout
             app:layout_constraintTop_toTopOf="parent"
@@ -15,32 +14,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:ems="10"
                 android:hint="CPF"
                 android:textColor="@color/black"
                 android:textColorHint ="@color/hint"
-                android:backgroundTint="@color/black"
-                android:inputType="textEmailAddress"/>
+                android:backgroundTint="@color/hint"
+                android:inputType="number"/>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Senha"
+            android:textColorHint ="@color/hint"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/hint">
+
+        <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Senha"
-                android:backgroundTint="@color/black"
+                android:ems="15"
+                android:textColorHint ="@color/hint"
+                android:backgroundTint="@color/white"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
                 android:id="@+id/btn_login"

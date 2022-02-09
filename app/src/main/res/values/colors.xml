@@ -11,5 +11,5 @@
     <color name="colorDarkSemiTransparent">#C6000000</color>
     <color name="colorLightSemiTransparent">#977ABCFF</color>
     <color name="background">#E4E4E4</color>
-    <color name="hint">#4A4A4A</color>
+    <color name="hint">#585858</color>
 </resources>

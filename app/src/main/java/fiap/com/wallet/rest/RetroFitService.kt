@@ -6,25 +6,24 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-interface RetroFitService {
+ interface  RetroFitService {
+
     companion object{
-        private val client= OkHttpClient.Builder().apply {
-            addInterceptor(MyInterceptor())
-        }.build()
+        private const val BASE_URL = "http://34.134.40.101:8080"
 
         private val retrofitService: RetrofitService by lazy{
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://3.140.201.92")//TODO: USAR VARIAVEL GLOBAL
-                .client(client)
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
             retrofit.create(RetrofitService::class.java)
-
         }
 
-        fun getInstance (): RetrofitService {
+         fun getInstance (): RetrofitService {
             return retrofitService
         }
+
     }
+
 }

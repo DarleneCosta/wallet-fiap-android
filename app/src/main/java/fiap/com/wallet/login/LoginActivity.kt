@@ -16,7 +16,6 @@ import fiap.com.wallet.login.dto.viewmodel.LoginViewModelFactory
 import fiap.com.wallet.login.repository.LoginRepository
 import fiap.com.wallet.login.rest.RetrofitService
 import fiap.com.wallet.store.StoreActivity
-import fiap.com.wallet.wallet.WalletActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -38,11 +37,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun observeLoginViewModel() {
+
         viewModel.liveDataSignUp.observe(this, Observer { loginResponseDTO ->
             if (loginResponseDTO == null) {
                 Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
             } else {
-                salvarToken(loginResponseDTO.token)
+                saveToken(loginResponseDTO.token)
                 Toast.makeText(this, "Logado com sucesso!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, StoreActivity::class.java)
                 intent.putExtra("CPF", loginResponseDTO.cpf);
@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
         viewModel.login(LoginDTO(cpf, password))
     }
 
-    fun salvarToken(token: String) {
+    private fun saveToken(token: String) {
         val sharedPreferences = getSharedPreferences("token", MODE_PRIVATE).edit()
         sharedPreferences.putString("token", token)
         sharedPreferences.commit()
