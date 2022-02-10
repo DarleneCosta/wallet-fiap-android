@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.SignUpActivity">
+
 
     <LinearLayout
         android:id="@+id/layout1"
-        android:layout_width="415dp"
-        android:layout_height="204dp"
-        android:layout_marginTop="131dp"
-        android:background="#1F91FB"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="600dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@color/purple_200"
+        android:gravity="center"
+      >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -30,119 +33,105 @@
             app:civ_border_color="#FF000000"
             app:civ_border_width="0dp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="418dp"
-        android:layout_height="398dp"
-        android:layout_margin="0dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="29dp"
-        android:background="@drawable/ic_linear_shadow"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout1"
-        android:textColor="@color/black">
-
         <EditText
             android:id="@+id/txtNome"
             android:layout_width="380dp"
-            android:layout_height="43dp"
+            android:layout_height="48dp"
             android:layout_margin="15dp"
             android:background="@drawable/ic_rounded_corner"
             android:ems="10"
-            android:textColor="@color/black"
-            android:textColorHint ="@color/hint"
             android:hint="Nome"
+            android:inputType="text"
             android:paddingLeft="10dp"
-            android:inputType="text" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint" />
 
         <EditText
             android:id="@+id/txtEmail"
             android:layout_width="380dp"
-            android:layout_height="43dp"
+            android:layout_height="48dp"
             android:layout_margin="15dp"
             android:width="386dp"
             android:background="@drawable/ic_rounded_corner"
             android:ems="10"
-            android:paddingLeft="10dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
             android:textColor="@color/black"
-            android:textColorHint ="@color/hint"/>
+            android:textColorHint="@color/hint" />
 
         <EditText
             android:id="@+id/txtCpf"
             android:layout_width="380dp"
-            android:layout_height="43dp"
+            android:layout_height="48dp"
             android:layout_margin="15dp"
             android:width="386dp"
             android:background="@drawable/ic_rounded_corner"
             android:ems="10"
-            android:paddingLeft="10dp"
             android:hint="CPF"
             android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="10dp"
             android:textColor="@color/black"
-            android:textColorHint ="@color/hint"/>
+            android:textColorHint="@color/hint" />
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:hint="Senha"
             android:background="@drawable/ic_rounded_corner"
-            android:textColorHint ="@color/hint"
+            android:hint="Senha"
+            android:textColorHint="@color/hint"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtSenha"
-                android:background="@drawable/ic_rounded_corner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ic_rounded_corner"
                 android:backgroundTint="@color/white"
                 android:ems="15"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
-                android:textColorHint="#757575" />
+                android:textColorHint="@color/hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Switch
             android:id="@+id/swtNotification"
             android:layout_width="373dp"
             android:layout_height="wrap_content"
+            android:checked="false"
+            android:minHeight="48dp"
             android:text="Deseja receber \n novidades por email"
             android:textColor="@color/white"
-            android:trackTint="@drawable/ic_newtrack"
             android:thumbTint="@drawable/ic_newthumb"
-            android:checked="false" />
+            android:trackTint="@drawable/ic_newtrack" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="412dp"
-        android:layout_height="150dp"
-        android:layout_margin="0dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/background"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        android:background="@color/background"
+        android:gravity="center"
+        app:layout_constraintHorizontal_bias="0.0"
+        >
 
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="345dp"
             android:layout_height="69dp"
+            android:layout_marginBottom="20dp"
             android:width="280dp"
-            android:backgroundTint="#FEBA0D"
+            android:backgroundTint="@color/orange"
             android:maxWidth="300dp"
             android:text="Registrar"
             app:circularflow_defaultRadius="185sp"
@@ -150,5 +139,11 @@
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="637dp" />
     </LinearLayout>
-
+    <fiap.com.wallet.views.shared.LoadingView
+        android:id="@+id/loading_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        app:visible="false"
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

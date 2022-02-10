@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".login.LoginActivity"
+        tools:context=".views.LoginActivity"
         android:orientation="vertical"
         android:background="@color/background">
 
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cpf"
+            android:id="@+id/txtCpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -41,7 +41,7 @@
             app:passwordToggleTint="@color/hint">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_password"
+                android:id="@+id/txtSenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -55,22 +55,29 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/btnLogin"
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Entrar"
-                android:onClick="login"
                 android:textColor="@color/white"/>
 
         <Button
-                android:id="@+id/btn_register"
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cadastrar-se"
-                android:onClick="signup"
                 android:textColor="@color/white"/>
 
     </LinearLayout>
+
+    <fiap.com.wallet.views.shared.LoadingView
+        android:id="@+id/loading_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        app:visible="false"
+        android:layout_height="match_parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
