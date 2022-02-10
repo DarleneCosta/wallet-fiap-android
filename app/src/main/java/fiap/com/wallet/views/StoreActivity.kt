@@ -37,6 +37,7 @@ class StoreActivity : AppCompatActivity() {
                 StoreViewModel::class.java
             )
         binding.recyclerview.adapter = adapter
+        binding.loadingView.show()
 
     }
 
@@ -61,7 +62,8 @@ class StoreActivity : AppCompatActivity() {
         val token = session.getStr("token")
 
         if (!cpf.isNullOrEmpty() && !token.isNullOrEmpty() ) {
-            viewModel.getAllStore(cpf, token)
+            viewModel.getAllStore(cpf, "Bearer $token")
+            binding.loadingView.dismiss()
         }
     }
 

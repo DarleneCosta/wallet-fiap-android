@@ -26,6 +26,7 @@
             app:expandedTitleTextColor="@color/white"
             app:collapsedTitleTextColor="@color/white"
             android:layout_marginLeft="10dp"
+            android:background="@color/purple_200"
             app:expandedTitleMarginBottom="20dp"
             app:expandedTitleMarginStart="15dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
@@ -101,5 +102,14 @@
         app:layout_anchorGravity="bottom|end|right"
         app:maxImageSize="28dp"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <fiap.com.wallet.views.shared.LoadingView
+        android:id="@+id/loading_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        app:visible="false"
+        android:layout_height="match_parent"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

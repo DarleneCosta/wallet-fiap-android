@@ -2,7 +2,6 @@ package fiap.com.wallet.views
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -15,7 +14,6 @@ import fiap.com.wallet.rest.RetroService
 import fiap.com.wallet.utils.Validator.validateCPF
 import fiap.com.wallet.utils.Validator.validatePassword
 import fiap.com.wallet.viewmodel.login.*
-import fiap.com.wallet.viewmodel.login.LoginViewModelFactory
 
 class LoginActivity : AppCompatActivity() {
 

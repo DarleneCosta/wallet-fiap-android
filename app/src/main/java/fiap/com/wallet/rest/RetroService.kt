@@ -26,7 +26,7 @@ interface RetroService {
     fun removeStorePreference(@Path ("cpf")cpf:String,  @Path ("id")id:Int, @Header("Authorization") authorization: String): Call<ResponseBody>
 
     companion object {
-        private const val BASE_URL = "http://34.134.40.101:8080"
+        private const val BASE_URL = BuildConfig.HOST
         private val retroService: RetroService by lazy {
 
             val retrofit = Retrofit.Builder()
