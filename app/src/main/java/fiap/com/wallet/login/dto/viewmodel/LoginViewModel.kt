@@ -13,18 +13,21 @@ import retrofit2.Response
 
 class LoginViewModel constructor(private val repository: LoginRepository) : ViewModel() {
 
-    val liveDataSignUp = MutableLiveData<LoginResponseDTO>()
+    val liveDataSignUp = MutableLiveData<LoginResponseDTO?>()
 
     fun login(login: LoginDTO) {
         val request = repository.login(login)
         request.enqueue(object : Callback<LoginResponseDTO> {
+            override fun onFailure(call: Call<LoginResponseDTO>, t: Throwable) {
+                liveDataSignUp.postValue(null)
+            }
+
             override fun onResponse(
                 call: Call<LoginResponseDTO>,
                 response: Response<LoginResponseDTO>
             ) {
                 if (response.code() != 200) {
                     liveDataSignUp.postValue(null)
-                    return;
                 } else {
                     var body = response.body()
                     if (body != null) {
@@ -33,9 +36,6 @@ class LoginViewModel constructor(private val repository: LoginRepository) : View
                 }
             }
 
-            override fun onFailure(call: Call<LoginResponseDTO>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
 
         })
     }

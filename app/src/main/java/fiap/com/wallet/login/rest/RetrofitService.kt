@@ -8,8 +8,7 @@ import fiap.com.wallet.signup.model.SignUp
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface RetrofitService {
 
@@ -20,8 +19,8 @@ interface RetrofitService {
     fun login(@Body loginDTO: LoginDTO): Call<LoginResponseDTO>
 
     companion object {
-        private val BASE_URL = BuildConfig.HOST
-        val retrofitService: RetrofitService by lazy {
+        private const val BASE_URL = BuildConfig.HOST
+        private val retrofitService: RetrofitService by lazy {
             Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(BASE_URL)

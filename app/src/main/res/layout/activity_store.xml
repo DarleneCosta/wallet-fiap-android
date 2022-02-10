@@ -105,6 +105,4 @@
         app:maxImageSize="28dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

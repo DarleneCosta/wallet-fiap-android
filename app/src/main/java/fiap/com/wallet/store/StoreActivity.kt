@@ -11,7 +11,6 @@ import fiap.com.wallet.R
 import fiap.com.wallet.databinding.ActivityStoreBinding
 import fiap.com.wallet.store.adapters.StoreAdapter
 import fiap.com.wallet.store.api.RetrofitService
-import fiap.com.wallet.store.models.StorePreference
 import fiap.com.wallet.store.repositories.StoreRepository
 import fiap.com.wallet.store.store.StoreViewModel
 import fiap.com.wallet.store.store.StoreViewModelFactory
@@ -59,11 +58,5 @@ class StoreActivity : AppCompatActivity() {
         super.onResume()
         viewModel.getAllStore()
     }
-
-    private fun createStorePreference(store: StorePreference) {
-        val cpf = "11111111111"
-        viewModel.addStorePreference(cpf, store.id)
-    }
-
 
 }

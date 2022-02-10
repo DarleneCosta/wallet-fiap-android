@@ -11,10 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import fiap.com.wallet.R
 import fiap.com.wallet.databinding.ActivityLoginBinding
 import fiap.com.wallet.login.dto.LoginDTO
+import fiap.com.wallet.login.dto.LoginResponseDTO
 import fiap.com.wallet.login.dto.viewmodel.LoginViewModel
 import fiap.com.wallet.login.dto.viewmodel.LoginViewModelFactory
 import fiap.com.wallet.login.repository.LoginRepository
 import fiap.com.wallet.login.rest.RetrofitService
+import fiap.com.wallet.signup.SignUpActivity
 import fiap.com.wallet.store.StoreActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -42,26 +44,33 @@ class LoginActivity : AppCompatActivity() {
             if (loginResponseDTO == null) {
                 Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
             } else {
-                saveToken(loginResponseDTO.token)
+                saveResponseDTO(loginResponseDTO)
                 Toast.makeText(this, "Logado com sucesso!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, StoreActivity::class.java)
-                intent.putExtra("CPF", loginResponseDTO.cpf);
+                //intent.putExtra("CPF", loginResponseDTO.cpf);
                 startActivity(intent)
                 finish()
             }
         })
     }
 
-    fun login(view: View) {
+     fun login(v:View?) {
         val cpf = findViewById<EditText>(R.id.cpf).text.toString()
         val password = findViewById<EditText>(R.id.edt_password).text.toString()
-        viewModel.login(LoginDTO(cpf, password))
+        val loginDTO = LoginDTO(cpf, password)
+         viewModel.login(loginDTO)
     }
 
-    private fun saveToken(token: String) {
-        val sharedPreferences = getSharedPreferences("token", MODE_PRIVATE).edit()
-        sharedPreferences.putString("token", token)
-        sharedPreferences.commit()
+    fun signup(v:View?) {
+        val intent = Intent(this, SignUpActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun saveResponseDTO(loginResponseDTO: LoginResponseDTO) {
+        val sharedLogin = this.getSharedPreferences("login", MODE_PRIVATE).edit()
+        sharedLogin.putString("token", loginResponseDTO.token)
+        sharedLogin.putString("cpf", loginResponseDTO.cpf)
+        sharedLogin.commit()
     }
 
 }

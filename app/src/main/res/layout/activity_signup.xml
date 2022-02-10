@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -15,7 +17,8 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -85,18 +88,28 @@
             android:textColor="@color/black"
             android:textColorHint ="@color/hint"/>
 
-        <EditText
-            android:id="@+id/txtSenha"
-            android:layout_width="380dp"
-            android:layout_height="43dp"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:width="386dp"
-            android:background="@drawable/ic_rounded_corner"
-            android:ems="10"
-            android:paddingLeft="10dp"
             android:hint="Senha"
-            android:inputType="textPassword"
-            android:textColorHint ="@color/hint"/>
+            android:background="@drawable/ic_rounded_corner"
+            android:textColorHint ="@color/hint"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSenha"
+                android:background="@drawable/ic_rounded_corner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:ems="15"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Switch
             android:id="@+id/swtNotification"

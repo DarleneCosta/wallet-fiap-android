@@ -7,7 +7,8 @@
     app:circularflow_defaultRadius="20sp"
     app:circularflow_radiusInDP="35sp"
     tools:context=".home.HomeActivity"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:orientation="vertical">
 
 
     <LinearLayout
