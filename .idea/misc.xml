@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/paula/Coco de Fiap/wallet-fiap-android-master/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/paula/Coco de Fiap/wallet-fiap-android-master/app/src/main/res/layout/activity_signup.xml" value="0.25555555555555554" />
+        <entry key="..\:/Users/paula/Coco de Fiap/wallet-fiap-android-master/app/src/main/res/layout/activity_store.xml" value="0.1" />
+        <entry key="..\:/Users/paula/Coco de Fiap/wallet-fiap-android-master/app/src/main/res/layout/activity_wallet.xml" value="0.1" />
+        <entry key="..\:/Users/paula/Coco de Fiap/wallet-fiap-android-master/app/src/main/res/layout/res_item_preference.xml" value="0.1" />
+        <entry key="..\:/Users/paula/Coco de Fiap/wallet-fiap-android-master/app/src/main/res/layout/res_item_wallet.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
