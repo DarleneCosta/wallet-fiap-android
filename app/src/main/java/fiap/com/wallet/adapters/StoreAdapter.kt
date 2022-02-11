@@ -67,6 +67,7 @@ class StoreAdapter(private var context: Context) :RecyclerView.Adapter<StoreAdap
             store: StorePreference,
             context: Context
         ) {
+            println(store.id )
            val session = UserSession(context)
             val cpf = session.getStr("cpf")
             val token = session.getStr("token")
