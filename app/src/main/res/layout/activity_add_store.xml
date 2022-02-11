@@ -89,7 +89,7 @@
         android:background="@color/white"
         android:backgroundTint="@color/orange"
         android:elevation="5dp"
-        android:src="@drawable/ic_baseline_face_24"
+        android:src="@drawable/ic_baseline_exit_to_app_24"
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="top|end|right"
         app:maxImageSize="28dp"

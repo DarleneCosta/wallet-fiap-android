@@ -12,7 +12,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         app:contentScrim="@color/purple_200"
         android:fitsSystemWindows="true">
 
@@ -79,23 +79,28 @@
         android:id="@+id/btn_editUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="85dp"
         android:background="@color/white"
         android:backgroundTint="@color/orange"
         android:elevation="5dp"
-        android:src="@drawable/ic_baseline_face_24"
+        android:src="@drawable/ic_baseline_exit_to_app_24"
         app:layout_anchor="@id/appBarLayout"
+        app:backgroundTint="@color/orange"
         app:layout_anchorGravity="top|end|right"
         app:maxImageSize="28dp"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        android:layout_marginEnd="25dp"
+        android:onClick="logout"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_addStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
+        android:layout_marginEnd="25dp"
         android:background="@color/white"
         android:backgroundTint="@color/orange"
+        app:backgroundTint="@color/orange"
         android:elevation="5dp"
         android:src="@drawable/ic_baseline_add_24"
         app:layout_anchor="@id/appNestedScrollView"

@@ -21,5 +21,9 @@ class UserSession (context: Context){
         return preferences.getString(key, "")
     }
 
+    fun clearAll(){
+        preferences.edit().clear().commit()
+    }
+
 
 }

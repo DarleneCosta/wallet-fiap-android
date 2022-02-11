@@ -18,8 +18,9 @@ class HomeActivity : AppCompatActivity() {
         val token = session.getStr("token")
         if(!cpf.isNullOrEmpty() && !token.isNullOrEmpty() ){
             startActivity(Intent(this@HomeActivity, StoreActivity::class.java))
+            finish()
         }
-        finish()
+
     }
 
     fun login(v:View) {

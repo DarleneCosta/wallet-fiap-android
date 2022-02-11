@@ -1,8 +1,10 @@
 package fiap.com.wallet.views
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -38,7 +40,6 @@ class StoreActivity : AppCompatActivity() {
             )
         binding.recyclerview.adapter = adapter
         binding.loadingView.show()
-
     }
 
     override fun onStart() {
@@ -65,6 +66,13 @@ class StoreActivity : AppCompatActivity() {
             viewModel.getAllStore(cpf, "Bearer $token")
             binding.loadingView.dismiss()
         }
+    }
+
+   fun logout(v: View?) {
+        val session =  UserSession(this)
+        session.clearAll()
+        startActivity(Intent(this@StoreActivity, HomeActivity::class.java))
+        finish()
     }
 
 }
