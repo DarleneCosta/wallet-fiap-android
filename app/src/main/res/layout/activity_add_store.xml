@@ -7,14 +7,13 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".views.StoreActivity">
+    tools:context=".views.AddStoreActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
+        android:layout_height="240dp"
+        app:contentScrim="@color/purple_200">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar"
@@ -80,38 +79,44 @@
     </androidx.core.widget.NestedScrollView>
 
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_editUser"
+        android:id="@+id/btnClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="85dp"
         android:background="@color/white"
         android:backgroundTint="@color/orange"
         android:elevation="5dp"
-        android:src="@drawable/ic_baseline_exit_to_app_24"
+        android:src="@drawable/ic_baseline_clear_24"
         app:layout_anchor="@id/appBarLayout"
+        app:backgroundTint="@color/orange"
         app:layout_anchorGravity="top|end|right"
         app:maxImageSize="28dp"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        android:layout_marginEnd="25dp"
+        android:onClick="close"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_addStore"
+        android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
+        android:layout_marginEnd="25dp"
         android:background="@color/white"
         android:backgroundTint="@color/orange"
+        app:backgroundTint="@color/orange"
         android:elevation="5dp"
-        android:drawableTint="@color/white"
-        android:tint="@color/white"
-        android:src="@drawable/ic_baseline_clear_24"
-        android:textStyle="bold"
+        android:src="@drawable/ic_baseline_check_24"
         app:layout_anchor="@id/appNestedScrollView"
         app:layout_anchorGravity="bottom|end|right"
-        app:maxImageSize="28dp"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:maxImageSize="28dp"/>
 
-
+    <fiap.com.wallet.views.shared.LoadingView
+        android:id="@+id/loading_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        app:visible="false"
+        android:layout_height="match_parent"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

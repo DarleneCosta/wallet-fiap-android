@@ -12,9 +12,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        app:contentScrim="@color/purple_200"
-        android:fitsSystemWindows="true">
+        android:layout_height="240dp"
+        app:contentScrim="@color/purple_200">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar"
@@ -71,12 +70,13 @@
         tools:itemCount="3"
         tools:listitem="@layout/res_item_preference" />
 
+           =
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_editUser"
+        android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="85dp"
@@ -93,7 +93,7 @@
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_addStore"
+        android:id="@+id/btnAddStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -106,7 +106,7 @@
         app:layout_anchor="@id/appNestedScrollView"
         app:layout_anchorGravity="bottom|end|right"
         app:maxImageSize="28dp"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:onClick="addActivity"/>
 
     <fiap.com.wallet.views.shared.LoadingView
         android:id="@+id/loading_view"

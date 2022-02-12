@@ -12,7 +12,7 @@ import fiap.com.wallet.models.UserSession
 import fiap.com.wallet.viewmodel.storePreference.StoreViewModel
 
 
-class StoreAdapter(private var context: Context) :RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
+class StoreAdapter(private val onItemClicked: (StorePreference) -> Unit) :RecyclerView.Adapter<StoreViewHolder>() {
     private var stores = mutableListOf<StorePreference>()
 
     fun setStorePreferenceList(store: List<StorePreference>) {
@@ -23,62 +23,35 @@ class StoreAdapter(private var context: Context) :RecyclerView.Adapter<StoreAdap
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ResItemPreferenceBinding.inflate(inflater, parent, false)
-        //val view = inflater.inflate(R.layout.res_item_preference, parent, false)
         return StoreViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
         val store = stores[position]
-        holder.bind(store)
+        holder.bind(store, onItemClicked)
     }
 
     override fun getItemCount(): Int {
         return stores.size
     }
 
-    class StoreViewHolder(private val binding: ResItemPreferenceBinding) :RecyclerView.ViewHolder(binding.root) {
+}
 
-        fun bind(store: StorePreference) {
 
-            //TODO: colocar o icone da loja
-            binding.name.text = store.name
-            binding.percent.text = store.percent.toString() + "%"
+class StoreViewHolder(private val binding: ResItemPreferenceBinding) :RecyclerView.ViewHolder(binding.root) {
 
-            binding.btnDelete.setOnClickListener {
+    fun bind(store: StorePreference,  onItemClicked: (StorePreference) -> Unit) {
 
-                val msg = "Você deseja excluir a loja " + store.name + "?"
-                val builder = AlertDialog.Builder(it.context)
-                builder.setTitle(R.string.title_delete)
-                builder.setMessage(msg)
+        //TODO: colocar o icone da loja
+        binding.name.text = store.name
+        binding.percent.text = store.percent.toString() + "%"
 
-                builder.setPositiveButton("Sim"){_, _ ->
-                    deleteStoreFavorite(store, it.context)
-                }
-                builder.setNeutralButton("Cancelar") { _, _ ->
-                    println("nok")
-                }
-                val dialog: AlertDialog = builder.create()
-                dialog.show()
-
-            }
+        binding.btnDelete.setOnClickListener {
+            onItemClicked(store)
         }
-
-        private fun deleteStoreFavorite(
-            store: StorePreference,
-            context: Context
-        ) {
-            println(store.id )
-           val session = UserSession(context)
-            val cpf = session.getStr("cpf")
-            val token = session.getStr("token")
-
-            if (!cpf.isNullOrEmpty() && !token.isNullOrEmpty() ) {
-
-                //viewModel.removeStorePreference(cpf, store.id ,"Bearer $token")
-            }
-        }
-
-
     }
+
+
+
 }
 
