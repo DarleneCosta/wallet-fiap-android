@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Wallet"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ADDActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.StoreAddActivity"
             android:exported="false" />
         <activity

@@ -16,8 +16,11 @@ interface RetroService {
     @POST("login")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
+    @GET("store")
+    fun getAllStore( @Header("Authorization") authorization: String): Call<List<Store>>
+
     @GET("preference/{cpf}")
-    fun getAllStore(@Path ("cpf")cpf:String, @Header("Authorization") authorization: String): Call<List<StorePreference>>
+    fun getAllStorePreference( @Path ("cpf")cpf:String, @Header("Authorization") authorization: String): Call<List<Store>>
 
     @POST("preference/{cpf}/{id}")
     fun addStorePreference(@Path ("cpf")cpf:String, @Path ("id")id:Int, @Header("Authorization") authorization: String): Call<ResponseBody>

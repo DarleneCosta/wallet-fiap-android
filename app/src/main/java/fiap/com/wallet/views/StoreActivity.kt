@@ -13,8 +13,8 @@ import androidx.lifecycle.ViewModelProvider
 import fiap.com.wallet.R
 import fiap.com.wallet.adapters.StoreAdapter
 import fiap.com.wallet.databinding.ActivityStoreBinding
-import fiap.com.wallet.models.StorePreference
-import fiap.com.wallet.models.UserSession
+import fiap.com.wallet.models.Store
+import fiap.com.wallet.models.Session
 import fiap.com.wallet.repositories.StoreRepository
 import fiap.com.wallet.rest.RetroService
 import fiap.com.wallet.viewmodel.storePreference.*
@@ -59,11 +59,11 @@ class StoreActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        loadingListStore()
+        loadingListStorePreference()
     }
 
-    private fun loadingListStore(){
-        val session = UserSession(this)
+    private fun loadingListStorePreference(){
+        val session = Session(this)
         val cpf = session.getStr("cpf")
         val token = session.getStr("token")
 
@@ -73,7 +73,7 @@ class StoreActivity : AppCompatActivity() {
         }
     }
 
-    private fun confirmDeleteStore(store:StorePreference){
+    private fun confirmDeleteStore(store:Store){
         val msg = "Você deseja excluir a loja " + store.name + "?"
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.title_delete)
@@ -82,13 +82,13 @@ class StoreActivity : AppCompatActivity() {
         builder.setPositiveButton("Sim"){_, _ ->
 
             binding.loadingView.show()
-            val session = UserSession(this)
+            val session = Session(this)
             val cpf = session.getStr("cpf")
             val token = session.getStr("token")
 
             if (!cpf.isNullOrEmpty() && !token.isNullOrEmpty() ) {
                 viewModel.removeStorePreference(cpf, store.id ,"Bearer $token")
-                loadingListStore()
+                loadingListStorePreference()
             }
         }
         builder.setNeutralButton("Cancelar") { _, _ ->
@@ -105,7 +105,7 @@ class StoreActivity : AppCompatActivity() {
     }
 
     fun logout(v: View?) {
-        val session =  UserSession(this)
+        val session =  Session(this)
         session.clearAll()
         startActivity(Intent(this@StoreActivity, HomeActivity::class.java))
         finish()

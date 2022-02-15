@@ -1,21 +1,16 @@
 package fiap.com.wallet.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-import fiap.com.wallet.R
 import fiap.com.wallet.databinding.ResItemPreferenceBinding
-import fiap.com.wallet.models.StorePreference
-import fiap.com.wallet.models.UserSession
-import fiap.com.wallet.viewmodel.storePreference.StoreViewModel
+import fiap.com.wallet.models.Store
 
 
-class StoreAdapter(private val onItemClicked: (StorePreference) -> Unit) :RecyclerView.Adapter<StoreViewHolder>() {
-    private var stores = mutableListOf<StorePreference>()
+class StoreAdapter(private val onItemClicked: (Store) -> Unit) :RecyclerView.Adapter<StoreViewHolder>() {
+    private var stores = mutableListOf<Store>()
 
-    fun setStorePreferenceList(store: List<StorePreference>) {
+    fun setStorePreferenceList(store: List<Store>) {
         this.stores = store.toMutableList()
         notifyDataSetChanged()
     }
@@ -40,7 +35,7 @@ class StoreAdapter(private val onItemClicked: (StorePreference) -> Unit) :Recycl
 
 class StoreViewHolder(private val binding: ResItemPreferenceBinding) :RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(store: StorePreference,  onItemClicked: (StorePreference) -> Unit) {
+    fun bind(store: Store, onItemClicked: (Store) -> Unit) {
 
         //TODO: colocar o icone da loja
         binding.name.text = store.name
@@ -50,8 +45,5 @@ class StoreViewHolder(private val binding: ResItemPreferenceBinding) :RecyclerVi
             onItemClicked(store)
         }
     }
-
-
-
 }
 

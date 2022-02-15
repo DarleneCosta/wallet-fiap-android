@@ -10,7 +10,7 @@ class StoreViewModelFactory constructor(private val repository: StoreRepository)
         return if(modelClass.isAssignableFrom(StoreViewModel::class.java)){
             StoreViewModel(this.repository) as T
         }else{
-            throw IllegalArgumentException("ViewStore Not Found")
+            throw IllegalArgumentException("StoreViewModel Not Found")
         }
     }
 }

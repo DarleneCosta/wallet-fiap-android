@@ -10,7 +10,7 @@ class LoginViewModelFactory(private val repository: LoginRepository) : ViewModel
         return if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             LoginViewModel(this.repository) as T
         } else {
-            throw IllegalArgumentException("ViewModel Not Found")
+            throw IllegalArgumentException("LoginViewModel Not Found")
         }
     }
 }

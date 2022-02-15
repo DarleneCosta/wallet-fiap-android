@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 
-class UserSession (context: Context){
+class Session (context: Context){
 
     private val PREFS_NAME = "userSession"
 

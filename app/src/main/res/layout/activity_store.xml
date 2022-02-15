@@ -24,7 +24,6 @@
             app:title="@string/title_preference"
             app:expandedTitleTextColor="@color/white"
             app:collapsedTitleTextColor="@color/white"
-            android:layout_marginLeft="10dp"
             android:background="@color/purple_200"
             app:expandedTitleMarginBottom="20dp"
             app:expandedTitleMarginStart="15dp"
@@ -59,18 +58,16 @@
             android:orientation="vertical"
             android:padding="15dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="3"
-        tools:listitem="@layout/res_item_preference" />
-
-           =
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="3"
+                tools:listitem="@layout/res_item_preference" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -90,6 +87,7 @@
         app:maxImageSize="28dp"
         android:layout_marginEnd="25dp"
         android:onClick="logout"
+
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

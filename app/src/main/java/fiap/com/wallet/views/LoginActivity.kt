@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import fiap.com.wallet.databinding.ActivityLoginBinding
 import fiap.com.wallet.models.LoginRequest
-import fiap.com.wallet.models.UserSession
+import fiap.com.wallet.models.Session
 import fiap.com.wallet.repositories.LoginRepository
 import fiap.com.wallet.rest.RetroService
 import fiap.com.wallet.utils.Validator.validateCPF
@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
         viewModel.success.observe(this, Observer {
 
             //save cpf in preferences
-            val session =  UserSession(this)
+            val session =  Session(this)
             session.setStr("cpf", it.cpf)
             session.setStr("token", it.token)
 
