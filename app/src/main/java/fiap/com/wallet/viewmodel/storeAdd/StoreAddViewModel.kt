@@ -12,12 +12,12 @@ import java.net.HttpURLConnection
 
 class StoreAddViewModel(private val repository: StoreAddRepository): ViewModel() {
     val storeList = MutableLiveData<List<Store>>()
-    val store = MutableLiveData<Store>()
+    val store = MutableLiveData<List<Store>>()
     val status = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
 
     fun getAllStore (token:String){
-        val request = repository.getAllStore( token)
+        val request = repository.getAllStore(token)
         request.enqueue(object : Callback<List<Store>> {
             override fun onResponse(
                 call: Call<List<Store>>,
@@ -36,12 +36,12 @@ class StoreAddViewModel(private val repository: StoreAddRepository): ViewModel()
         })
     }
 
-    fun getStore (name:String,token:String){
-        val request = repository.getStore(name, token)
-        request.enqueue(object : Callback<Store> {
+    fun getStoreSearch (name:String,token:String){
+        val request = repository.getStoreSearch(name, token)
+        request.enqueue(object : Callback<List<Store>> {
             override fun onResponse(
-                call: Call<Store>,
-                response: Response<Store>
+                call: Call<List<Store>>,
+                response: Response<List<Store>>
             ) {
                 if (response.code() == HttpURLConnection.HTTP_OK) {
                     store.postValue(response.body())
@@ -50,14 +50,14 @@ class StoreAddViewModel(private val repository: StoreAddRepository): ViewModel()
                 }
             }
 
-            override fun onFailure(call: Call<Store>, t: Throwable) {
+            override fun onFailure(call: Call<List<Store>>, t: Throwable) {
                 errorMessage.postValue(t.message)
             }
         })
     }
 
-    fun addStorePreference(cpf:String, id:Int,token:String){
-        val request = repository.addStorePreference(cpf, id, token)
+    fun addStorePreference(cpf:String,idStore:Int,token:String){
+        val request = repository.addStorePreference(cpf,idStore,token)
         request.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
 

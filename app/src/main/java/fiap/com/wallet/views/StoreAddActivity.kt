@@ -30,8 +30,8 @@ class StoreAddActivity : AppCompatActivity() {
     private var retrofitService = RetroService.getInstance()
 
     var cpf = String()
-    var token = String()
-
+    var authorization = String()
+    var idStore: Int? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityStoreAddBinding.inflate(layoutInflater)
@@ -43,7 +43,7 @@ class StoreAddActivity : AppCompatActivity() {
             )
 
         val session = Session(this)
-        token = session.getStr("token").toString()
+        authorization = "Bearer ${session.getStr("token").toString()}"
         cpf = session.getStr("cpf").toString()
 
     }
@@ -51,7 +51,7 @@ class StoreAddActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         _binding.loadingView.show()
-        viewModel.getAllStore( "Bearer $token")
+        viewModel.getAllStore( authorization)
     }
 
     override fun onStart() {
@@ -103,12 +103,12 @@ class StoreAddActivity : AppCompatActivity() {
 
     private fun loadingStore(name: String){
         _binding.loadingView.show()
-        viewModel.getStore( name, "Bearer $token")
+        viewModel.getStoreSearch( name, authorization)
         viewModel.store.observe(this, Observer { store ->
-            println(store)
             _binding.loadingView.dismiss()
-            _binding.txtStore.text = store.name
-            _binding.txtPercent.text = store.percent.toString() + "%"
+            idStore= store[0].id
+            _binding.txtStore.text = store[0].name
+            _binding.txtPercent.text = store[0].percent.toString() + "%"
         })
         viewModel.errorMessage.observe(this, Observer {
             _binding.loadingView.dismiss()
@@ -121,7 +121,9 @@ class StoreAddActivity : AppCompatActivity() {
     }
 
     fun addStore(v: View){
-        Toast.makeText(baseContext, "add info", Toast.LENGTH_LONG).show()
+        idStore?.let { viewModel.addStorePreference(cpf, it, authorization) }
+        _binding.loadingView.show()
+        back(v)
     }
 
     fun back(v: View){

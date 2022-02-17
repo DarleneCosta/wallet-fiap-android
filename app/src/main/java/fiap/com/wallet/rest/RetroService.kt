@@ -20,7 +20,7 @@ interface RetroService {
     fun getAllStore( @Header("Authorization") authorization: String): Call<List<Store>>
 
     @GET("store/name/{name}")
-    fun getStore( @Path ("name")cpf:String, @Header("Authorization") authorization: String): Call<Store>
+    fun getStoreSearch( @Path ("name")cpf:String, @Header("Authorization") authorization: String): Call<List<Store>>
 
     @GET("preference/{cpf}")
     fun getAllStorePreference( @Path ("cpf")cpf:String, @Header("Authorization") authorization: String): Call<List<Store>>
