@@ -36,8 +36,6 @@ class StoreViewModel constructor(private val repository: StoreRepository):ViewMo
         })
     }
 
-
-
     fun removeStorePreference(cpf:String, id:Int,token:String){
         val request = repository.removeStorePreference(cpf, id, token)
         request.enqueue(object : Callback<ResponseBody> {

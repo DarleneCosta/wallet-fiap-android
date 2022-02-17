@@ -26,8 +26,11 @@ class StoreAddActivity : AppCompatActivity() {
 
     private lateinit var _binding: ActivityStoreAddBinding
     private lateinit var viewModel: StoreAddViewModel
-    private var retrofitService = RetroService.getInstance()
     lateinit var storeAdapter : ArrayAdapter<String>
+    private var retrofitService = RetroService.getInstance()
+
+    var cpf = String()
+    var token = String()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,19 +42,16 @@ class StoreAddActivity : AppCompatActivity() {
                 StoreAddViewModel::class.java
             )
 
+        val session = Session(this)
+        token = session.getStr("token").toString()
+        cpf = session.getStr("cpf").toString()
 
     }
 
     override fun onResume() {
         super.onResume()
-
-        val session = Session(this)
-        val token = session.getStr("token")
-
-        if (!token.isNullOrEmpty()) {
-            _binding.loadingView.show()
-            viewModel.getAllStore( "Bearer $token")
-        }
+        _binding.loadingView.show()
+        viewModel.getAllStore( "Bearer $token")
     }
 
     override fun onStart() {
@@ -70,13 +70,11 @@ class StoreAddActivity : AppCompatActivity() {
 
     }
 
-
     private fun setStoreList(store: List<Store>){
 
         val storeNames: List<String> = store.map { it.name }
         storeAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1, storeNames)
         _binding.listView.adapter = storeAdapter
-
 
         _binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -96,25 +94,37 @@ class StoreAddActivity : AppCompatActivity() {
             }
         })
 
-        val listClickItem =
-            OnItemClickListener { _, arg1, _, _ ->
-                val info = (arg1 as TextView).text.toString()
-                Toast.makeText(baseContext, "Item $info", Toast.LENGTH_LONG).show()
+        val listClickItem = OnItemClickListener { _, arg1, _, _ ->
+                loadingStore((arg1 as TextView).text.toString())
                 _binding.cardView.visibility = View.VISIBLE
             }
         _binding.listView.onItemClickListener = listClickItem
-
-
-
     }
+
+    private fun loadingStore(name: String){
+        _binding.loadingView.show()
+        viewModel.getStore( name, "Bearer $token")
+        viewModel.store.observe(this, Observer { store ->
+            println(store)
+            _binding.loadingView.dismiss()
+            _binding.txtStore.text = store.name
+            _binding.txtPercent.text = store.percent.toString() + "%"
+        })
+        viewModel.errorMessage.observe(this, Observer {
+            _binding.loadingView.dismiss()
+            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        })
+    }
+
     fun cancel(v: View){
         _binding.cardView.visibility = View.GONE
     }
+
     fun addStore(v: View){
         Toast.makeText(baseContext, "add info", Toast.LENGTH_LONG).show()
     }
 
-    fun close(v: View){
+    fun back(v: View){
         startActivity(Intent(this@StoreAddActivity, StoreActivity::class.java))
         finish()
     }

@@ -12,6 +12,7 @@ import java.net.HttpURLConnection
 
 class StoreAddViewModel(private val repository: StoreAddRepository): ViewModel() {
     val storeList = MutableLiveData<List<Store>>()
+    val store = MutableLiveData<Store>()
     val status = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
 
@@ -30,6 +31,26 @@ class StoreAddViewModel(private val repository: StoreAddRepository): ViewModel()
             }
 
             override fun onFailure(call: Call<List<Store>>, t: Throwable) {
+                errorMessage.postValue(t.message)
+            }
+        })
+    }
+
+    fun getStore (name:String,token:String){
+        val request = repository.getStore(name, token)
+        request.enqueue(object : Callback<Store> {
+            override fun onResponse(
+                call: Call<Store>,
+                response: Response<Store>
+            ) {
+                if (response.code() == HttpURLConnection.HTTP_OK) {
+                    store.postValue(response.body())
+                } else {
+                    errorMessage.postValue("Erro ao lista loja ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Store>, t: Throwable) {
                 errorMessage.postValue(t.message)
             }
         })
