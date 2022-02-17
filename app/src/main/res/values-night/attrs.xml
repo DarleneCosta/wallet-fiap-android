@@ -4,5 +4,4 @@
     <declare-styleable name="LoadingView">
         <attr name="visible" format="boolean" />
     </declare-styleable>
-
 </resources>

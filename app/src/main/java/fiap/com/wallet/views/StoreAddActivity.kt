@@ -1,5 +1,6 @@
 package fiap.com.wallet.views
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import fiap.com.wallet.databinding.ActivityStoreAddBinding
@@ -98,12 +100,19 @@ class StoreAddActivity : AppCompatActivity() {
             OnItemClickListener { _, arg1, _, _ ->
                 val info = (arg1 as TextView).text.toString()
                 Toast.makeText(baseContext, "Item $info", Toast.LENGTH_LONG).show()
+                _binding.cardView.visibility = View.VISIBLE
             }
         _binding.listView.onItemClickListener = listClickItem
 
 
-    }
 
+    }
+    fun cancel(v: View){
+        _binding.cardView.visibility = View.GONE
+    }
+    fun addStore(v: View){
+        Toast.makeText(baseContext, "add info", Toast.LENGTH_LONG).show()
+    }
 
     fun close(v: View){
         startActivity(Intent(this@StoreAddActivity, StoreActivity::class.java))
