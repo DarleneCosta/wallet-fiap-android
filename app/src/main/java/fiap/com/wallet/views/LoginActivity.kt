@@ -64,27 +64,27 @@ class LoginActivity : AppCompatActivity() {
 
         btnRegister.setOnClickListener {
             startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
-                }
+        }
     }
 
 
     override fun onStart() {
         super.onStart()
 
-        viewModel.success.observe(this, Observer {
+        viewModel.liveDataSignUp.observe(this, Observer {
 
-            //save cpf in preferences
-            val session =  Session(this)
-            session.setStr("cpf", it.cpf)
-            session.setStr("token", it.token)
+            if (this != null) {
+                //save cpf in preferences
+                val session = Session(this)
+                session.setStr("cpf", it.cpf)
+                session.setStr("token", it.token)
 
-            startActivity(Intent(this@LoginActivity, StoreActivity::class.java))
-            finish()
-        })
+                startActivity(Intent(this@LoginActivity, StoreActivity::class.java))
+                finish()
 
-        viewModel.errorMessage.observe(this, Observer {
-            _binding.loadingView.dismiss()
-            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "Login ou senha inválida", Toast.LENGTH_SHORT)
+            }
         })
 
     }
