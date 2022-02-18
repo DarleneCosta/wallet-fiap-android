@@ -34,7 +34,8 @@ class LoginViewModel constructor(private val repository: LoginRepository) : View
             }
 
             override fun onFailure(call: Call<LoginResponseDTO>, t: Throwable) {
-                TODO("Not yet implemented")
+                liveDataSignUp.postValue(null)
+                return;
             }
 
         })

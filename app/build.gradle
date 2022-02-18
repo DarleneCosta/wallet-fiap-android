@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-parcelize'
 }
 apply plugin: 'kotlin-android'
+apply from: '../versions.gradle'
 
 android {
     compileSdk 31
@@ -69,5 +70,10 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    /* Testing libraries */
+    testImplementation "junit:junit:$versions.jUnit"
+    testImplementation "io.mockk:mockk:$versions.mockk"
+    testImplementation "androidx.arch.core:core-testing:$versions.lifecycle_version"
 
 }
