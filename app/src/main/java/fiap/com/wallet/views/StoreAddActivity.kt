@@ -13,6 +13,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import fiap.com.wallet.databinding.ActivityStoreAddBinding
 import fiap.com.wallet.models.Session
 import fiap.com.wallet.models.Store
@@ -105,10 +107,19 @@ class StoreAddActivity : AppCompatActivity() {
         _binding.loadingView.show()
         viewModel.getStoreSearch( name, authorization)
         viewModel.store.observe(this, Observer { store ->
-            _binding.loadingView.dismiss()
+
+            val requestOptions = RequestOptions()
+                .placeholder(fiap.com.wallet.R.drawable.ic_launcher_background)
+                .error(fiap.com.wallet.R.drawable.ic_launcher_background)
+
+            Glide.with(this)
+                .applyDefaultRequestOptions(requestOptions)
+                .load("https://midia.fotos-riachuelo.com.br/spa-storefront/public/images/logo-192x192.png")
+                .into(_binding.logo)
             idStore= store[0].id
             _binding.txtStore.text = store[0].name
             _binding.txtPercent.text = store[0].percent.toString() + "%"
+            _binding.loadingView.dismiss()
         })
         viewModel.errorMessage.observe(this, Observer {
             _binding.loadingView.dismiss()

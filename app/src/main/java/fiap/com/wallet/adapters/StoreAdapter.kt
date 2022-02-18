@@ -3,6 +3,9 @@ package fiap.com.wallet.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import fiap.com.wallet.R
 import fiap.com.wallet.databinding.ResItemPreferenceBinding
 import fiap.com.wallet.models.Store
 
@@ -40,6 +43,15 @@ class StoreViewHolder(private val binding: ResItemPreferenceBinding) :RecyclerVi
         //TODO: colocar o icone da loja
         binding.name.text = store.name
         binding.percent.text = store.percent.toString() + "%"
+
+        val requestOptions = RequestOptions()
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_launcher_background)
+
+        Glide.with(itemView.context)
+            .applyDefaultRequestOptions(requestOptions)
+            .load("https://midia.fotos-riachuelo.com.br/spa-storefront/public/images/logo-192x192.png")
+            .into(binding.logo)
 
         binding.btnDelete.setOnClickListener {
             onItemClicked(store)
