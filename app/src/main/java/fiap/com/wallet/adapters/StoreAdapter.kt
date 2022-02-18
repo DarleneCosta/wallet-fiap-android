@@ -50,7 +50,7 @@ class StoreViewHolder(private val binding: ResItemPreferenceBinding) :RecyclerVi
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOptions)
-            .load("https://midia.fotos-riachuelo.com.br/spa-storefront/public/images/logo-192x192.png")
+            .load(store.urlLogo)
             .into(binding.logo)
 
         binding.btnDelete.setOnClickListener {

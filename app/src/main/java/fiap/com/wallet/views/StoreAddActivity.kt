@@ -97,14 +97,14 @@ class StoreAddActivity : AppCompatActivity() {
         })
 
         val listClickItem = OnItemClickListener { _, arg1, _, _ ->
+                _binding.loadingView.show()
                 loadingStore((arg1 as TextView).text.toString())
-                _binding.cardView.visibility = View.VISIBLE
             }
         _binding.listView.onItemClickListener = listClickItem
     }
 
     private fun loadingStore(name: String){
-        _binding.loadingView.show()
+
         viewModel.getStoreSearch( name, authorization)
         viewModel.store.observe(this, Observer { store ->
 
@@ -114,11 +114,13 @@ class StoreAddActivity : AppCompatActivity() {
 
             Glide.with(this)
                 .applyDefaultRequestOptions(requestOptions)
-                .load("https://midia.fotos-riachuelo.com.br/spa-storefront/public/images/logo-192x192.png")
+                .load(store[0].urlLogo)
                 .into(_binding.logo)
             idStore= store[0].id
             _binding.txtStore.text = store[0].name
             _binding.txtPercent.text = store[0].percent.toString() + "%"
+
+            _binding.cardView.visibility = View.VISIBLE
             _binding.loadingView.dismiss()
         })
         viewModel.errorMessage.observe(this, Observer {
