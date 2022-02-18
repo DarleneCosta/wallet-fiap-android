@@ -22,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:orientation="vertical"
-            android:background="@color/purple_200">
+            android:background="@color/purple_200"
+            >
 
             <Button
                 android:id="@+id/btnClose"
@@ -44,7 +45,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="85dp"
+                android:layout_marginTop="75dp"
                 android:layout_marginLeft="20dp"
                 android:text="Selecione a loja que deseja adicionar"
                 android:textColor="@color/white"
@@ -61,7 +62,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="bottom|center"
             android:textStyle="bold"
             android:theme="@style/ThemeOverlay.MaterialComponents.Light"
@@ -79,8 +80,6 @@
 
             />
 
-
-
     </LinearLayout>
 
 
@@ -88,7 +87,7 @@
         android:id="@+id/cardView"
         app:cardUseCompatPadding="true"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="240dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -100,8 +99,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"
         >
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -194,6 +191,8 @@
         android:layout_width="match_parent"
         app:visible="false"
         android:layout_height="match_parent"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

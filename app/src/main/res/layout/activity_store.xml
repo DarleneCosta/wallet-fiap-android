@@ -71,40 +71,44 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/orange"
-        android:elevation="5dp"
-        android:src="@drawable/ic_exit"
-        app:layout_anchor="@id/appBarLayout"
-        app:backgroundTint="@color/orange"
-        app:layout_anchorGravity="top|end|right"
-        app:maxImageSize="28dp"
-        android:layout_marginEnd="25dp"
-        android:onClick="logout"
-        />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAddStore"
+        android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:layout_marginEnd="25dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:focusable="true"
         app:backgroundTint="@color/orange"
         android:elevation="5dp"
-        android:src="@drawable/ic_add"
         app:layout_anchor="@id/appNestedScrollView"
         app:layout_anchorGravity="bottom|end|right"
-        app:maxImageSize="28dp"
-        android:onClick="addActivity"/>
+        android:src="@drawable/ic_add"
+        android:tint="@android:color/white"
+        />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/btnMenu"
+        app:layout_anchorGravity="center|top"
+        android:layout_marginBottom="90dp"
+        android:visibility="invisible"
+        android:src="@drawable/ic_edit"
+        app:backgroundTint="@color/purple_700"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/btnAdd"
+        app:layout_anchorGravity="center|top"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/ic_exit"
+        app:backgroundTint="@color/purple_700"
+        android:visibility="invisible"
+        />
     <fiap.com.wallet.views.shared.LoadingView
         android:id="@+id/loading_view"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -112,6 +116,8 @@
         android:layout_width="match_parent"
         app:visible="false"
         android:layout_height="match_parent"/>
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
