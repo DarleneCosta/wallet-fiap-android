@@ -13,28 +13,32 @@ import java.net.HttpURLConnection
 
 class LoginViewModel constructor(private val repository: LoginRepository) : ViewModel() {
 
-    val success = MutableLiveData<LoginResponse>()
-    val errorMessage = MutableLiveData<String>()
+    val liveDataSignUp = MutableLiveData<LoginResponse>()
 
-    fun login(loginRequest: LoginRequest) {
-
-        val request = repository.login(loginRequest)
+    fun login(login: LoginRequest) {
+        val request = repository.login(login)
         request.enqueue(object : Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-
-                if (response.code() == HttpURLConnection.HTTP_OK) {
-                    success.postValue(response.body())
+            override fun onResponse(
+                call: Call<LoginResponse>,
+                response: Response<LoginResponse>
+            ) {
+                if (response.code() != 200) {
+                    liveDataSignUp.postValue(null)
+                    return;
                 } else {
-                    errorMessage.postValue("Usuário ou senha inválido(s), verifique.")
+                    var body = response.body()
+                    if (body != null) {
+                        liveDataSignUp.postValue(LoginResponse(body.token, body.cpf))
+                    }
                 }
-
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                errorMessage.postValue(t.message)
+                liveDataSignUp.postValue(null)
+                return;
             }
-        })
 
+        })
     }
 
 }
