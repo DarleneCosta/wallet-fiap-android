@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:circularflow_defaultRadius="20sp"
     app:circularflow_radiusInDP="35sp"
-    tools:context=".home.HomeActivity">
-
+    tools:context=".views.HomeActivity"
+    android:background="@color/background"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/view2"
         class="androidx.appcompat.widget.ActionMenuView"
-        android:layout_width="417dp"
-        android:layout_height="552dp"
-        android:layout_marginBottom="1dp"
-        android:background="#1F91FB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_200"
         android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -48,8 +51,8 @@
     <LinearLayout
         android:id="@+id/view"
         class="androidx.appcompat.widget.ActionMenuView"
-        android:layout_width="413dp"
-        android:layout_height="219dp"
+        android:color="@color/background"
+        android:layout_width="match_parent"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
@@ -58,7 +61,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2">
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        android:layout_height="220dp">
 
         <Button
             android:id="@+id/btnSignIn"
@@ -71,6 +75,7 @@
             android:textColorLink="@color/white"
             app:circularflow_defaultRadius="10sp"
             app:cornerRadius="30dp"
+            android:onClick="login"
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="558dp" />
 
@@ -78,11 +83,21 @@
             android:id="@+id/btnSignUp"
             android:layout_width="343dp"
             android:layout_height="69dp"
-            android:backgroundTint="#FEBA0D"
+            android:backgroundTint="@color/orange"
             android:text="Quero me cadastrar"
+            android:onClick="register"
             app:circularflow_defaultRadius="185sp"
             app:cornerRadius="30dp"
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="637dp" />
     </LinearLayout>
+
+    <fiap.com.wallet.views.shared.LoadingView
+        android:id="@+id/loading_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        app:visible="false"
+        android:layout_height="match_parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

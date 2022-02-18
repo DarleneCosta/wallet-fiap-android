@@ -7,15 +7,13 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".store.StoreActivity">
-=======
+    tools:context=".views.StoreActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
+        android:layout_height="240dp"
+        app:contentScrim="@color/purple_200">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar"
@@ -24,21 +22,18 @@
             android:fitsSystemWindows="true"
             app:contentScrim="@color/purple_200"
             app:title="@string/title_preference"
+            app:expandedTitleTextColor="@color/white"
+            app:collapsedTitleTextColor="@color/white"
+            android:background="@color/purple_200"
             app:expandedTitleMarginBottom="20dp"
             app:expandedTitleMarginStart="15dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="bottom"
-                android:background="@drawable/title_background"
-                />
-
-            <androidx.appcompat.widget.Toolbar
+             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
+                app:contentScrim="@color/purple_200"
                 android:text="@string/title_preference"
                 app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin"
@@ -63,48 +58,65 @@
             android:orientation="vertical"
             android:padding="15dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="3"
-        tools:listitem="@layout/res_item_preference" />
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="3"
+                tools:listitem="@layout/res_item_preference" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_editUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/orange"
-        android:elevation="5dp"
-        android:src="@drawable/ic_baseline_face_24"
-        app:layout_anchor="@id/appBarLayout"
-        app:layout_anchorGravity="top|end|right"
-        app:maxImageSize="28dp"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_addStore"
+        android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/orange"
+        android:layout_marginEnd="25dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/orange"
         android:elevation="5dp"
-        android:src="@drawable/ic_baseline_add_24"
         app:layout_anchor="@id/appNestedScrollView"
         app:layout_anchorGravity="bottom|end|right"
-        app:maxImageSize="28dp"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:src="@drawable/ic_add"
+        android:tint="@android:color/white"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/btnMenu"
+        app:layout_anchorGravity="center|top"
+        android:layout_marginBottom="90dp"
+        android:visibility="invisible"
+        android:src="@drawable/ic_edit"
+        app:backgroundTint="@color/purple_700"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/btnAdd"
+        app:layout_anchorGravity="center|top"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/ic_exit"
+        app:backgroundTint="@color/purple_700"
+        android:visibility="invisible"
+        />
+    <fiap.com.wallet.views.shared.LoadingView
+        android:id="@+id/loading_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        app:visible="false"
+        android:layout_height="match_parent"/>
+
 
 
 
