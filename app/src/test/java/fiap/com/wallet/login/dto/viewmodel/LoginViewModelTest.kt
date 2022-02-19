@@ -6,6 +6,7 @@ import fiap.com.wallet.MockCall
 import fiap.com.wallet.models.LoginRequest
 import fiap.com.wallet.models.LoginResponse
 import fiap.com.wallet.repositories.LoginRepository
+import fiap.com.wallet.viewmodel.login.LoginViewModel
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
