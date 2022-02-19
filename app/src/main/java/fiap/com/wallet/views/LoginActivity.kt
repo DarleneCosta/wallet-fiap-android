@@ -70,20 +70,20 @@ class LoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        viewModel.liveDataSignUp.observe(this, Observer {
+        viewModel.success.observe(this, Observer {
 
-            if (this != null) {
-                //save cpf in preferences
-                val session = Session(this)
-                session.setStr("cpf", it.cpf)
-                session.setStr("token", it.token)
+            val session = Session(this)
+            session.setStr("cpf", it.cpf)
+            session.setStr("token", it.token)
 
-                startActivity(Intent(this@LoginActivity, StoreActivity::class.java))
-                finish()
+            startActivity(Intent(this@LoginActivity, StoreActivity::class.java))
+            finish()
 
-            } else {
-                Toast.makeText(this, "Login ou senha inválida", Toast.LENGTH_SHORT)
-            }
+        })
+
+        viewModel.errorMessage.observe(this, Observer {
+            _binding.loadingView.dismiss()
+            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
         })
 
     }
