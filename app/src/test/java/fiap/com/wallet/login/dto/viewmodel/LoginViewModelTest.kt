@@ -60,7 +60,7 @@ class LoginViewModelTest {
 
     private fun instantiateViewModel(): LoginViewModel {
         val viewModel = LoginViewModel(repository);
-        viewModel.liveDataSignUp.observeForever(liveDataSignUp)
-        return viewModel;
+        viewModel.success.observeForever(liveDataSignUp)
+        return viewModel
     }
 }
