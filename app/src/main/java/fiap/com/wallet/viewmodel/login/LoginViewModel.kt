@@ -2,7 +2,6 @@ package fiap.com.wallet.viewmodel.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.gson.Gson
 import fiap.com.wallet.models.LoginResponse
 import fiap.com.wallet.models.LoginRequest
 import fiap.com.wallet.repositories.LoginRepository
@@ -13,32 +12,26 @@ import java.net.HttpURLConnection
 
 class LoginViewModel constructor(private val repository: LoginRepository) : ViewModel() {
 
-    val liveDataSignUp = MutableLiveData<LoginResponse>()
+    val success = MutableLiveData<LoginResponse>()
+    val errorMessage = MutableLiveData<String>()
 
-    fun login(login: LoginRequest) {
-        val request = repository.login(login)
+    fun login(loginRequest: LoginRequest) {
+
+        val request = repository.login(loginRequest)
         request.enqueue(object : Callback<LoginResponse> {
-            override fun onResponse(
-                call: Call<LoginResponse>,
-                response: Response<LoginResponse>
-            ) {
-                if (response.code() != 200) {
-                    liveDataSignUp.postValue(null)
-                    return;
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+
+                if (response.code() == HttpURLConnection.HTTP_OK) {
+                    success.postValue(response.body())
                 } else {
-                    var body = response.body()
-                    if (body != null) {
-                        liveDataSignUp.postValue(LoginResponse(body.token, body.cpf))
-                    }
+                    errorMessage.postValue("Não foi possivel entrar. Verifique seu usuário e senha.")
                 }
+
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                liveDataSignUp.postValue(null)
-                return;
+                errorMessage.postValue(t.message)
             }
-
         })
     }
-
 }

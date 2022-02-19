@@ -46,7 +46,6 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (!validatePassword(txtSenha.text.toString())) {
-
                 txtSenha.error = "Preencha a senha de acesso"
                 txtSenha.requestFocus()
                 return@setOnClickListener
