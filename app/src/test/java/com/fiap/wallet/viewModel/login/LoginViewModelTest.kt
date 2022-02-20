@@ -1,4 +1,4 @@
-package com.fiap.wallet.login.viewModel
+package com.fiap.wallet.viewModel.login
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer

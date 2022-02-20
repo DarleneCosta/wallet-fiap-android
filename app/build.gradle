@@ -66,9 +66,6 @@ dependencies {
     //material design
     implementation 'com.google.android.material:material:1.2.1'
 
-    //Palete
-    //implementation 'androidx.palette:palette-ktx:1.0.0'
-
     //Circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation "androidx.core:core-ktx:+"
