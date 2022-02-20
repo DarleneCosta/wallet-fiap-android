@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".views.StoreActivity">
+    tools:context=".ui.storesPreference.StoreActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -109,7 +109,7 @@
         app:backgroundTint="@color/purple_700"
         android:visibility="invisible"
         />
-    <fiap.com.wallet.views.shared.LoadingView
+    <com.fiap.wallet.ui.shared.LoadingView
         android:id="@+id/loading_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"

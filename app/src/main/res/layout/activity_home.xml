@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:circularflow_defaultRadius="20sp"
     app:circularflow_radiusInDP="35sp"
-    tools:context=".views.HomeActivity"
+    tools:context=".ui.home.HomeActivity"
     android:background="@color/background"
     android:orientation="vertical">
 
@@ -92,7 +92,7 @@
             tools:layout_editor_absoluteY="637dp" />
     </LinearLayout>
 
-    <fiap.com.wallet.views.shared.LoadingView
+    <com.fiap.wallet.ui.shared.LoadingView
         android:id="@+id/loading_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.SignUpActivity">
+    tools:context=".ui.signUp.SignUpActivity">
 
 
     <LinearLayout
@@ -139,7 +139,7 @@
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="637dp" />
     </LinearLayout>
-    <fiap.com.wallet.views.shared.LoadingView
+    <com.fiap.wallet.ui.shared.LoadingView
         android:id="@+id/loading_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
