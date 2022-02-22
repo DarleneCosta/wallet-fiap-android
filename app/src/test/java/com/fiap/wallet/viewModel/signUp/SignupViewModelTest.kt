@@ -16,6 +16,7 @@ import junit.framework.TestCase
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.ResponseBody
+import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Rule
 import org.junit.Test
 
@@ -32,7 +33,7 @@ class SignupViewModelTest {
         val viewModel = instantiateViewModel()
 
         val cadastro = SignUp("joão vitor","jvitor.almeida98@gmail.com","123456789","minhasenha",true)
-        val response = ResponseBody.create("application/json".toMediaTypeOrNull(),"")
+        val response = "".toResponseBody("application/json".toMediaTypeOrNull())
 
         every { repository.signUp(cadastro) } returns MockCall(
             MockCall.ResponseCase.success,
