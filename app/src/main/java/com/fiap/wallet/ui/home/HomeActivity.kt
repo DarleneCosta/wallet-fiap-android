@@ -8,7 +8,7 @@ import com.fiap.wallet.R
 import com.fiap.wallet.utils.Session
 import com.fiap.wallet.ui.login.LoginActivity
 import com.fiap.wallet.ui.signUp.SignUpActivity
-import com.fiap.wallet.ui.storesPreference.StoreActivity
+import com.fiap.wallet.ui.stores.StoreActivity
 
 class HomeActivity : AppCompatActivity() {
 

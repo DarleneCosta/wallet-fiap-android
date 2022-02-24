@@ -12,7 +12,7 @@ import com.fiap.wallet.utils.Session
 import com.fiap.wallet.repositories.login.LoginRepository
 import com.fiap.wallet.rest.RetroService
 import com.fiap.wallet.ui.signUp.SignUpActivity
-import com.fiap.wallet.ui.storesPreference.StoreActivity
+import com.fiap.wallet.ui.stores.StoreActivity
 import com.fiap.wallet.utils.Validator.validateCPF
 import com.fiap.wallet.utils.Validator.validatePassword
 import com.fiap.wallet.viewModel.login.*

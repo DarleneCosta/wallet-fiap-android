@@ -1,4 +1,4 @@
-package com.fiap.wallet.ui.storesPreference.adapters
+package com.fiap.wallet.ui.stores.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

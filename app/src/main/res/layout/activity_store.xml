@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.storesPreference.StoreActivity">
+    tools:context=".ui.stores.StoreActivity">
 
     <LinearLayout
         android:id="@+id/background"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:orientation="vertical"
-            android:background="@color/purple_200"
+            android:background="@drawable/background"
             >
 
 

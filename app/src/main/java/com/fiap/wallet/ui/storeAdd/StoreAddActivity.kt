@@ -18,7 +18,7 @@ import com.fiap.wallet.utils.Session
 import com.fiap.wallet.models.Store
 import com.fiap.wallet.repositories.storeAdd.StoreAddRepository
 import com.fiap.wallet.rest.RetroService
-import com.fiap.wallet.ui.storesPreference.StoreActivity
+import com.fiap.wallet.ui.stores.StoreActivity
 import com.fiap.wallet.viewModel.storeAdd.StoreAddViewModel
 import com.fiap.wallet.viewModel.storeAdd.StoreAddViewModelFactory
 

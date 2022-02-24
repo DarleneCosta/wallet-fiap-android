@@ -1,4 +1,4 @@
-package com.fiap.wallet.ui.storesPreference
+package com.fiap.wallet.ui.stores
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.fiap.wallet.R
-import com.fiap.wallet.ui.storesPreference.adapters.StoreAdapter
+import com.fiap.wallet.ui.stores.adapters.StoreAdapter
 import com.fiap.wallet.databinding.ActivityStoreBinding
 import com.fiap.wallet.models.Store
 import com.fiap.wallet.utils.Session
@@ -85,7 +85,6 @@ class StoreActivity : AppCompatActivity() {
 
     private fun addStore() {
         startActivity(Intent(this@StoreActivity, StoreAddActivity::class.java))
-        finish()
     }
 
     private fun confirmDeleteStore(store:Store){
