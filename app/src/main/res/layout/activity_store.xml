@@ -5,71 +5,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".ui.storesPreference.StoreActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        app:contentScrim="@color/purple_200">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="@color/purple_200"
-            app:title="@string/title_preference"
-            app:expandedTitleTextColor="@color/white"
-            app:collapsedTitleTextColor="@color/white"
-            android:background="@color/purple_200"
-            app:expandedTitleMarginBottom="20dp"
-            app:expandedTitleMarginStart="15dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
-
-             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbarLayout"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                app:contentScrim="@color/purple_200"
-                android:text="@string/title_preference"
-                app:contentInsetStart="0dp"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
-
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/appNestedScrollView"
+    <LinearLayout
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="@color/background"
-        android:overScrollMode="never"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
+        >
         <LinearLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:background="@color/purple_200"
+            >
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview"
+
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:itemCount="3"
-                tools:listitem="@layout/res_item_preference" />
+                android:layout_height="60dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/title_preference"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                tools:layout_editor_absoluteX="61dp"
+                tools:layout_editor_absoluteY="77dp" />
+
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearBody"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/res_item_preference" />
+
+
+    </LinearLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnMenu"
@@ -79,14 +70,14 @@
         android:layout_marginEnd="25dp"
         android:clickable="true"
         android:focusable="true"
+        android:contentDescription="mais"
         app:backgroundTint="@color/orange"
         android:elevation="5dp"
-        app:layout_anchor="@id/appNestedScrollView"
+        app:layout_anchor="@id/background"
         app:layout_anchorGravity="bottom|end|right"
         android:src="@drawable/ic_add"
         android:tint="@android:color/white"
         />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
@@ -94,9 +85,10 @@
         app:layout_anchor="@id/btnMenu"
         app:layout_anchorGravity="center|top"
         android:layout_marginBottom="90dp"
-        android:visibility="invisible"
+        android:contentDescription="adicionar"
         android:src="@drawable/ic_edit"
-        app:backgroundTint="@color/purple_700"
+        app:backgroundTint="@color/orange_700"
+        android:visibility="invisible"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnExit"
@@ -106,9 +98,11 @@
         app:layout_anchorGravity="center|top"
         android:layout_marginBottom="150dp"
         android:src="@drawable/ic_exit"
-        app:backgroundTint="@color/purple_700"
+        app:backgroundTint="@color/orange_700"
+        android:contentDescription="sair"
         android:visibility="invisible"
         />
+
     <com.fiap.wallet.ui.shared.LoadingView
         android:id="@+id/loading_view"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -116,8 +110,6 @@
         android:layout_width="match_parent"
         app:visible="false"
         android:layout_height="match_parent"/>
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
