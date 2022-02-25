@@ -27,7 +27,7 @@ class StoreAddActivity : AppCompatActivity() {
 
     private lateinit var _binding: ActivityStoreAddBinding
     private lateinit var viewModel: StoreAddViewModel
-    lateinit var storeAdapter : ArrayAdapter<String>
+    lateinit var storeAdapter: ArrayAdapter<String>
     private var retrofitService = RetroService.getInstance()
 
     var cpf = String()
@@ -39,7 +39,10 @@ class StoreAddActivity : AppCompatActivity() {
         setContentView(_binding.root)
 
         viewModel =
-            ViewModelProvider(this, StoreAddViewModelFactory(StoreAddRepository(retrofitService))).get(
+            ViewModelProvider(
+                this,
+                StoreAddViewModelFactory(StoreAddRepository(retrofitService))
+            ).get(
                 StoreAddViewModel::class.java
             )
 
@@ -52,7 +55,7 @@ class StoreAddActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         _binding.loadingView.show()
-        viewModel.getAllStore( authorization)
+        viewModel.getAllStore(authorization)
     }
 
     override fun onStart() {
@@ -71,19 +74,20 @@ class StoreAddActivity : AppCompatActivity() {
 
     }
 
-    private fun setStoreList(store: List<Store>){
+    private fun setStoreList(store: List<Store>) {
 
         val storeNames: List<String> = store.map { it.name }
-        storeAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1, storeNames)
+        storeAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, storeNames)
         _binding.listView.adapter = storeAdapter
 
-        _binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        _binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 _binding.searchView.clearFocus()
-                if(storeNames.contains(query)){
+                if (storeNames.contains(query)) {
                     storeAdapter.filter.filter(query)
-                }else{
-                    Toast.makeText(applicationContext, "Loja não localizada", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(applicationContext, "Loja não localizada", Toast.LENGTH_LONG)
+                        .show()
                 }
                 println(storeAdapter.count)
                 return false
@@ -96,15 +100,15 @@ class StoreAddActivity : AppCompatActivity() {
         })
 
         val listClickItem = OnItemClickListener { _, arg1, _, _ ->
-                _binding.loadingView.show()
-                loadingStore((arg1 as TextView).text.toString())
-            }
+            _binding.loadingView.show()
+            loadingStore((arg1 as TextView).text.toString())
+        }
         _binding.listView.onItemClickListener = listClickItem
     }
 
-    private fun loadingStore(name: String){
+    private fun loadingStore(name: String) {
 
-        viewModel.getStoreSearch( name, authorization)
+        viewModel.getStoreSearch(name, authorization)
         viewModel.store.observe(this, Observer { store ->
 
             val requestOptions = RequestOptions()
@@ -115,7 +119,7 @@ class StoreAddActivity : AppCompatActivity() {
                 .applyDefaultRequestOptions(requestOptions)
                 .load(store[0].urlLogo)
                 .into(_binding.logo)
-            idStore= store[0].id
+            idStore = store[0].id
             _binding.txtStore.text = store[0].name
             _binding.txtPercent.text = store[0].percent.toString() + "%"
 
@@ -128,17 +132,17 @@ class StoreAddActivity : AppCompatActivity() {
         })
     }
 
-    fun cancel(v: View){
+    fun cancel(v: View) {
         _binding.cardView.visibility = View.GONE
     }
 
-    fun addStore(v: View){
+    fun addStore(v: View) {
         idStore?.let { viewModel.addStorePreference(cpf, it, authorization) }
         _binding.loadingView.show()
         back(v)
     }
 
-    fun back(v: View){
+    fun back(v: View) {
         startActivity(Intent(this@StoreAddActivity, StoreActivity::class.java))
         finish()
     }

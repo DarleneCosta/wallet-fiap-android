@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.storeAdd.StoreAddActivity"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/background"
-        >
+        android:background="@color/background">
 
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:orientation="vertical"
-            android:background="@drawable/background"
-            >
+            android:background="@drawable/background">
 
             <Button
                 android:id="@+id/btnClose"
@@ -50,6 +46,7 @@
                 android:text="Selecione a loja que deseja adicionar"
                 android:textColor="@color/white"
                 android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@id/header"
                 tools:layout_editor_absoluteX="61dp"
                 tools:layout_editor_absoluteY="77dp" />
 
@@ -76,8 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="258dp"
-            />
+            tools:layout_editor_absoluteY="258dp" />
 
     </LinearLayout>
 
@@ -96,13 +92,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/constLayout"
-            >
+            android:id="@+id/constLayout">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
@@ -113,8 +108,7 @@
                 app:cardMaxElevation="12dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true"
-                tools:ignore="MissingConstraints"
-                >
+                tools:ignore="MissingConstraints">
 
                 <ImageView
                     android:id="@+id/logo"
@@ -125,8 +119,7 @@
                     android:padding="0dp"
                     android:scaleType="fitXY"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/txtStore"
@@ -198,15 +191,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
     <com.fiap.wallet.ui.shared.LoadingView
         android:id="@+id/loading_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         app:visible="false"
-        android:layout_height="match_parent"/>
-
-
+        android:layout_height="match_parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

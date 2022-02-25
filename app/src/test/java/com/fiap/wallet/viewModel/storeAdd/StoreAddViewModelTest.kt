@@ -89,7 +89,7 @@ class StoreAddViewModelTest {
 
         viewModel.getStoreSearch(searchLoja, fakeToken)
 
-        verify { repository.getStoreSearch(searchLoja, fakeToken)}
+        verify { repository.getStoreSearch(searchLoja, fakeToken) }
         verify { listObserver.onChanged(response) }
     }
 
@@ -127,15 +127,15 @@ class StoreAddViewModelTest {
 
         val response = "".toResponseBody("application/json".toMediaTypeOrNull())
 
-        every { repository.addStorePreference(fakeCpf,idStore, fakeToken) } returns MockCall(
+        every { repository.addStorePreference(fakeCpf, idStore, fakeToken) } returns MockCall(
             MockCall.ResponseCase.success,
             response
         )
 
-        viewModel.addStorePreference(fakeCpf,idStore, fakeToken)
+        viewModel.addStorePreference(fakeCpf, idStore, fakeToken)
 
-        verify { repository.addStorePreference(fakeCpf,idStore, fakeToken)}
-        verify { status.onChanged( true) }
+        verify { repository.addStorePreference(fakeCpf, idStore, fakeToken) }
+        verify { status.onChanged(true) }
     }
 
     @Test
@@ -148,14 +148,14 @@ class StoreAddViewModelTest {
 
         val response = "".toResponseBody("application/json".toMediaTypeOrNull())
 
-        every { repository.addStorePreference(fakeCpf,idStore, fakeToken) } returns MockCall(
+        every { repository.addStorePreference(fakeCpf, idStore, fakeToken) } returns MockCall(
             MockCall.ResponseCase.failure,
             response
         )
 
-        viewModel.addStorePreference(fakeCpf,idStore, fakeToken)
+        viewModel.addStorePreference(fakeCpf, idStore, fakeToken)
 
-        verify { repository.addStorePreference(fakeCpf,idStore, fakeToken) }
+        verify { repository.addStorePreference(fakeCpf, idStore, fakeToken) }
         verify { status.onChanged(false) }
     }
 

@@ -16,7 +16,7 @@ object Validator {
     }
 
     fun validateCPF(cpf: String): Boolean {
-        return !(cpf.isEmpty() || cpf.isBlank() || cpf.length!==11)
+        return !(cpf.isEmpty() || cpf.isBlank() || cpf.length !== 11)
     }
 
 }

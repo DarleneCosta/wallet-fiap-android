@@ -1,7 +1,6 @@
 package com.fiap.wallet.ui.shared
 
 
-
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -10,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.fiap.wallet.R
 import com.fiap.wallet.databinding.LoadingViewBinding
 
-class LoadingView (context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
+class LoadingView(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
 
     private val binding: LoadingViewBinding =
         LoadingViewBinding.inflate(LayoutInflater.from(context), this, true)

@@ -34,14 +34,14 @@ class StoreViewModelTest {
             Store(2, "C&A", "4321", 10L, "asdas.com.br")
         )
 
-        every { repository.getAllStorePreference(cpfFake,fakeToken) } returns MockCall(
+        every { repository.getAllStorePreference(cpfFake, fakeToken) } returns MockCall(
             MockCall.ResponseCase.success,
             response
         )
 
-        viewModel.getAllStore(cpfFake,fakeToken)
+        viewModel.getAllStore(cpfFake, fakeToken)
 
-        verify { repository.getAllStorePreference(cpfFake,fakeToken) }
+        verify { repository.getAllStorePreference(cpfFake, fakeToken) }
         verify { listObserver.onChanged(response) }
     }
 
@@ -56,15 +56,15 @@ class StoreViewModelTest {
             Store(2, "C&A", "4321", 10L, "asdas.com.br")
         )
 
-        every { repository.getAllStorePreference(cpfFake,fakeToken)  } returns MockCall(
+        every { repository.getAllStorePreference(cpfFake, fakeToken) } returns MockCall(
             MockCall.ResponseCase.failure,
             response
         )
 
-        viewModel.getAllStore(cpfFake,fakeToken)
+        viewModel.getAllStore(cpfFake, fakeToken)
 
 
-        verify { repository.getAllStorePreference(cpfFake,fakeToken) }
+        verify { repository.getAllStorePreference(cpfFake, fakeToken) }
         verify(exactly = 0) { listObserver.onChanged(any()) }
         verify { error.onChanged("Mock failed successfully") }
     }
@@ -79,15 +79,15 @@ class StoreViewModelTest {
 
         val response = "".toResponseBody("application/json".toMediaTypeOrNull())
 
-        every { repository.removeStorePreference(fakeCpf,idStore, fakeToken) } returns MockCall(
+        every { repository.removeStorePreference(fakeCpf, idStore, fakeToken) } returns MockCall(
             MockCall.ResponseCase.success,
             response
         )
 
-        viewModel.removeStorePreference(fakeCpf,idStore, fakeToken)
+        viewModel.removeStorePreference(fakeCpf, idStore, fakeToken)
 
-        verify { repository.removeStorePreference(fakeCpf,idStore, fakeToken)}
-        verify { status.onChanged( true) }
+        verify { repository.removeStorePreference(fakeCpf, idStore, fakeToken) }
+        verify { status.onChanged(true) }
     }
 
     @Test
@@ -100,14 +100,14 @@ class StoreViewModelTest {
 
         val response = "".toResponseBody("application/json".toMediaTypeOrNull())
 
-        every { repository.removeStorePreference(fakeCpf,idStore, fakeToken) } returns MockCall(
+        every { repository.removeStorePreference(fakeCpf, idStore, fakeToken) } returns MockCall(
             MockCall.ResponseCase.failure,
             response
         )
 
-        viewModel.removeStorePreference(fakeCpf,idStore, fakeToken)
+        viewModel.removeStorePreference(fakeCpf, idStore, fakeToken)
 
-        verify { repository.removeStorePreference(fakeCpf,idStore, fakeToken) }
+        verify { repository.removeStorePreference(fakeCpf, idStore, fakeToken) }
         verify { status.onChanged(false) }
     }
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,15 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/background"
-        >
+        android:background="@color/background">
+
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:orientation="vertical"
-            android:background="@drawable/background"
-            >
+            android:background="@drawable/background">
 
 
             <TextView
@@ -39,6 +37,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/linearBody"
         android:layout_width="match_parent"
@@ -76,8 +75,8 @@
         app:layout_anchor="@id/background"
         app:layout_anchorGravity="bottom|end|right"
         android:src="@drawable/ic_add"
-        android:tint="@android:color/white"
-        />
+        android:tint="@android:color/white" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
@@ -88,8 +87,8 @@
         android:contentDescription="adicionar"
         android:src="@drawable/ic_edit"
         app:backgroundTint="@color/orange_700"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
@@ -100,8 +99,7 @@
         android:src="@drawable/ic_exit"
         app:backgroundTint="@color/orange_700"
         android:contentDescription="sair"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible" />
 
     <com.fiap.wallet.ui.shared.LoadingView
         android:id="@+id/loading_view"
@@ -109,7 +107,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         app:visible="false"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

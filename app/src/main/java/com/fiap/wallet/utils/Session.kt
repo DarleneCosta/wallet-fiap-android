@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 
-class Session (context: Context) {
+class Session(context: Context) {
 
     private val PREFS_NAME = "userSession"
 
@@ -21,7 +21,7 @@ class Session (context: Context) {
         return preferences.getString(key, "")
     }
 
-    fun clearAll(){
+    fun clearAll() {
         preferences.edit().clear().commit()
     }
 

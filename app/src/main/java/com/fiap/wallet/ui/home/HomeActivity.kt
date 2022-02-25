@@ -19,19 +19,19 @@ class HomeActivity : AppCompatActivity() {
         val session = Session(this)
         val cpf = session.getStr("cpf")
         val token = session.getStr("token")
-        if(!cpf.isNullOrEmpty() && !token.isNullOrEmpty() ){
+        if (!cpf.isNullOrEmpty() && !token.isNullOrEmpty()) {
             startActivity(Intent(this@HomeActivity, StoreActivity::class.java))
             finish()
         }
 
     }
 
-    fun login(v:View) {
+    fun login(v: View) {
         startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
         finish()
     }
 
-    fun register(v:View?) {
+    fun register(v: View?) {
         startActivity(Intent(this@HomeActivity, SignUpActivity::class.java))
         finish()
     }

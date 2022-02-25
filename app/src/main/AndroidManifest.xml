@@ -24,6 +24,7 @@
         <activity android:name=".ui.store.StoreActivity" />
         <activity android:name=".ui.signUp.SignUpActivity" />
         <activity android:name=".ui.storeAdd.StoreAddActivity" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

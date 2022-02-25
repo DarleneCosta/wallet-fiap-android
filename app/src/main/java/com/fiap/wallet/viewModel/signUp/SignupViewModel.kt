@@ -15,12 +15,12 @@ class SignupViewModel constructor(private val repository: SignupRepository) : Vi
 
     val status = MutableLiveData<Boolean>()
 
-    fun signUp (signUp:SignUp){
+    fun signUp(signUp: SignUp) {
 
         val request = repository.signUp(signUp)
 
         request.enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>){
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
 
                 if (response.code() == HttpURLConnection.HTTP_OK) {
                     status.postValue(true)
@@ -29,7 +29,7 @@ class SignupViewModel constructor(private val repository: SignupRepository) : Vi
                 }
             }
 
-            override fun onFailure(call:Call<ResponseBody>, t:Throwable) {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 status.postValue(false)
             }
         })

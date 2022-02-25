@@ -10,7 +10,8 @@ import com.fiap.wallet.databinding.ResItemPreferenceBinding
 import com.fiap.wallet.models.Store
 
 
-class StoreAdapter(private val onItemClicked: (Store) -> Unit) :RecyclerView.Adapter<StoreViewHolder>() {
+class StoreAdapter(private val onItemClicked: (Store) -> Unit) :
+    RecyclerView.Adapter<StoreViewHolder>() {
     private var stores = mutableListOf<Store>()
 
     fun setStorePreferenceList(store: List<Store>) {
@@ -36,7 +37,8 @@ class StoreAdapter(private val onItemClicked: (Store) -> Unit) :RecyclerView.Ada
 }
 
 
-class StoreViewHolder(private val binding: ResItemPreferenceBinding) :RecyclerView.ViewHolder(binding.root) {
+class StoreViewHolder(private val binding: ResItemPreferenceBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
     fun bind(store: Store, onItemClicked: (Store) -> Unit) {
 

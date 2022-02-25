@@ -17,19 +17,33 @@ interface RetroService {
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
     @GET("store")
-    fun getAllStore( @Header("Authorization") authorization: String): Call<List<Store>>
+    fun getAllStore(@Header("Authorization") authorization: String): Call<List<Store>>
 
     @GET("store/name/{name}")
-    fun getStoreSearch( @Path ("name")cpf:String, @Header("Authorization") authorization: String): Call<List<Store>>
+    fun getStoreSearch(
+        @Path("name") cpf: String,
+        @Header("Authorization") authorization: String
+    ): Call<List<Store>>
 
     @GET("preference/{cpf}")
-    fun getAllStorePreference( @Path ("cpf")cpf:String, @Header("Authorization") authorization: String): Call<List<Store>>
+    fun getAllStorePreference(
+        @Path("cpf") cpf: String,
+        @Header("Authorization") authorization: String
+    ): Call<List<Store>>
 
     @POST("preference/{cpf}/{id}")
-    fun addStorePreference(@Path ("cpf")cpf:String, @Path ("id")id:Int, @Header("Authorization") authorization: String): Call<ResponseBody>
+    fun addStorePreference(
+        @Path("cpf") cpf: String,
+        @Path("id") id: Int,
+        @Header("Authorization") authorization: String
+    ): Call<ResponseBody>
 
     @DELETE("preference/{cpf}/{id}")
-    fun removeStorePreference(@Path ("cpf")cpf:String,  @Path ("id")id:Int, @Header("Authorization") authorization: String): Call<ResponseBody>
+    fun removeStorePreference(
+        @Path("cpf") cpf: String,
+        @Path("id") id: Int,
+        @Header("Authorization") authorization: String
+    ): Call<ResponseBody>
 
     companion object {
         private const val BASE_URL = BuildConfig.HOST

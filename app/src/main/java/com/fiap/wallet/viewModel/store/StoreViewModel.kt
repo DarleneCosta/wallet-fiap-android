@@ -11,12 +11,12 @@ import retrofit2.Response
 import java.net.HttpURLConnection
 import java.net.HttpURLConnection.HTTP_OK
 
-class StoreViewModel constructor(private val repository: StoreRepository):ViewModel() {
+class StoreViewModel constructor(private val repository: StoreRepository) : ViewModel() {
     val storeList = MutableLiveData<List<Store>>()
     val status = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
 
-    fun getAllStore (cpf:String,token:String){
+    fun getAllStore(cpf: String, token: String) {
         val request = repository.getAllStorePreference(cpf, token)
         request.enqueue(object : Callback<List<Store>> {
             override fun onResponse(
@@ -36,7 +36,7 @@ class StoreViewModel constructor(private val repository: StoreRepository):ViewMo
         })
     }
 
-    fun removeStorePreference(cpf:String, id:Int,token:String){
+    fun removeStorePreference(cpf: String, id: Int, token: String) {
         val request = repository.removeStorePreference(cpf, id, token)
         request.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {

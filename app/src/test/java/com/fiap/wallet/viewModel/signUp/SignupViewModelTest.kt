@@ -32,7 +32,8 @@ class SignupViewModelTest {
     fun `should sign up with success`() {
         val viewModel = instantiateViewModel()
 
-        val cadastro = SignUp("joão vitor","jvitor.almeida98@gmail.com","123456789","minhasenha",true)
+        val cadastro =
+            SignUp("joão vitor", "jvitor.almeida98@gmail.com", "123456789", "minhasenha", true)
         val response = "".toResponseBody("application/json".toMediaTypeOrNull())
 
         every { repository.signUp(cadastro) } returns MockCall(
@@ -48,10 +49,11 @@ class SignupViewModelTest {
 
     @Test
     fun `should not sign in with success`() {
-      val viewModel = instantiateViewModel()
+        val viewModel = instantiateViewModel()
 
-        val cadastro = SignUp("joão vitor","jvitor.almeida98@gmail.com","123456789","minhasenha",true)
-        val response = ResponseBody.create("application/json".toMediaTypeOrNull(),"")
+        val cadastro =
+            SignUp("joão vitor", "jvitor.almeida98@gmail.com", "123456789", "minhasenha", true)
+        val response = ResponseBody.create("application/json".toMediaTypeOrNull(), "")
 
         every { repository.signUp(cadastro) } returns MockCall(
             MockCall.ResponseCase.failure,

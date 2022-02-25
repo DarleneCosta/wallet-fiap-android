@@ -2,7 +2,7 @@ package com.fiap.wallet.models
 
 import java.time.LocalDate
 
-data class User (
+data class User(
     var id: Int,
     var name: String,
     var birthDate: LocalDate,
