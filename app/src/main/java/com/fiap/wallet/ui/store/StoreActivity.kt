@@ -1,4 +1,4 @@
-package com.fiap.wallet.ui.stores
+package com.fiap.wallet.ui.store
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.fiap.wallet.R
-import com.fiap.wallet.ui.stores.adapters.StoreAdapter
+import com.fiap.wallet.ui.store.adapters.StoreAdapter
 import com.fiap.wallet.databinding.ActivityStoreBinding
 import com.fiap.wallet.models.Store
 import com.fiap.wallet.utils.Session
@@ -88,7 +88,7 @@ class StoreActivity : AppCompatActivity() {
     }
 
     private fun confirmDeleteStore(store:Store){
-        val msg = "Você deseja excluir a loja " + store.name + "?"
+        val msg = "Você deseja excluir a loja ${store.name}?"
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.title_delete)
         builder.setMessage(msg)

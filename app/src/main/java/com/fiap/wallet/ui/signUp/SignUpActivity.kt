@@ -1,6 +1,7 @@
 package com.fiap.wallet.ui.signUp
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,7 @@ import com.fiap.wallet.databinding.ActivitySignupBinding
 import com.fiap.wallet.rest.RetroService
 import com.fiap.wallet.models.SignUp
 import com.fiap.wallet.repositories.signUp.SignupRepository
+import com.fiap.wallet.ui.login.LoginActivity
 import com.fiap.wallet.viewModel.signUp.SignupViewModel
 import com.fiap.wallet.viewModel.signUp.SignupViewModelFactory
 
@@ -91,6 +93,7 @@ class SignUpActivity : AppCompatActivity() {
                     "Usuário registrado com sucesso!",
                     Toast.LENGTH_SHORT
                 ).show()
+                startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(
@@ -98,8 +101,9 @@ class SignUpActivity : AppCompatActivity() {
                     "Erro ao tentar registrar usuário. Tente novamente.",
                     Toast.LENGTH_SHORT
                 ).show()
-                _binding.loadingView.dismiss()
             }
+            _binding.loadingView.dismiss()
+
         })
 
     }
