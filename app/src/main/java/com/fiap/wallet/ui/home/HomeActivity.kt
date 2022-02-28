@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.fiap.wallet.R
-import com.fiap.wallet.utils.Session
+import com.fiap.wallet.utils.SharedSession
 import com.fiap.wallet.ui.login.LoginActivity
 import com.fiap.wallet.ui.signUp.SignUpActivity
 import com.fiap.wallet.ui.store.StoreActivity
@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val session = Session(this)
+        val session = SharedSession(this)
         val cpf = session.getStr("cpf")
         val token = session.getStr("token")
         if (!cpf.isNullOrEmpty() && !token.isNullOrEmpty()) {

@@ -39,9 +39,10 @@
             android:ems="10"
             android:hint="Nome"
             android:inputType="text"
-            android:paddingLeft="10dp"
+            android:paddingStart="10dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/hint" />
+            android:textColorHint="@color/hint"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -53,9 +54,10 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:paddingLeft="10dp"
+            android:paddingStart="10dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/hint" />
+            android:textColorHint="@color/hint"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/txtCpf"

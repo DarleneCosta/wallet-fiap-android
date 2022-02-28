@@ -32,9 +32,7 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(_binding.root)
 
         viewModel =
-            ViewModelProvider(this, SignupViewModelFactory(SignupRepository(retrofitService))).get(
-                SignupViewModel::class.java
-            )
+            ViewModelProvider(this, SignupViewModelFactory(SignupRepository(retrofitService)))[SignupViewModel::class.java]
 
         registerUser()
 
@@ -74,7 +72,7 @@ class SignUpActivity : AppCompatActivity() {
                     txtEmail.text.toString(),
                     txtCpf.text.toString(),
                     txtSenha.text.toString(),
-                    swtNotification.isChecked()
+                    swtNotification.isChecked
                 )
             )
             loadingView.show()

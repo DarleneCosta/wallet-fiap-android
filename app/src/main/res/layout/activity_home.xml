@@ -12,7 +12,6 @@
 
     <LinearLayout
         android:id="@+id/view2"
-        class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
@@ -34,7 +33,7 @@
             android:text="Seja bem-vindo \n  à sua carteira digital!   \n\nAqui você compra\nem suas lojas favoritas\ne ganha na hora cashback\n em sua carteira!"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="26sp"
             tools:layout_editor_absoluteX="61dp"
             tools:layout_editor_absoluteY="77dp" />
 
@@ -44,12 +43,12 @@
             android:layout_height="150dp"
             app:srcCompat="@mipmap/ic_wallet"
             tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="354dp" />
+            tools:layout_editor_absoluteY="354dp"
+            android:contentDescription="wallet" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/view"
-        class="androidx.appcompat.widget.ActionMenuView"
         android:color="@color/background"
         android:layout_width="match_parent"
         android:layout_marginTop="1dp"

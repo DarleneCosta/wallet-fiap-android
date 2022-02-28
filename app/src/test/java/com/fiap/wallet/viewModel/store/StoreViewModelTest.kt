@@ -4,6 +4,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.fiap.wallet.MockCall
 import com.fiap.wallet.models.Store
+import com.fiap.wallet.models.User
+import com.fiap.wallet.models.Wallet
 import com.fiap.wallet.repositories.store.StoreRepository
 import io.mockk.every
 import io.mockk.mockk
@@ -20,11 +22,51 @@ class StoreViewModelTest {
 
     private val repository = mockk<StoreRepository>()
     private val listObserver = mockk<Observer<List<Store>>>(relaxed = true)
+    private val wallet = mockk<Observer<Wallet>>(relaxed = true)
     private val error = mockk<Observer<String>>(relaxed = true)
     private val status = mockk<Observer<Boolean>>(relaxed = true)
 
     @Test
-    fun `deveria retornar a lista das lojas favoritas mockada`() {
+    fun `should return the information of the mocked wallet`() {
+        val viewModel = instantiateViewModel()
+
+        val fakeToken = "abc-123"
+        val cpfFake = "11111111111"
+        val response =  Wallet(6,User( 5, "Roberta Pinheiro","2022-02-28","email@emal.com", "00000000000", "11989966055"),25.9)
+
+        every { repository.getWallet(cpfFake, fakeToken) } returns MockCall(
+            MockCall.ResponseCase.success,
+            response
+        )
+
+        viewModel.getWallet(cpfFake, fakeToken)
+
+        verify { repository.getWallet(cpfFake, fakeToken) }
+        verify { wallet.onChanged(response) }
+    }
+
+    @Test
+    fun `should show error when request to fetch favorite wallet info fails`() {
+        val viewModel = instantiateViewModel()
+
+        val fakeToken = "abc-123"
+        val cpfFake = "11111111111"
+        val response =  Wallet(6,User( 5, "Roberta Pinheiro","2022-02-28","email@emal.com", "00000000000", "11989966055"),25.9)
+
+        every { repository.getWallet(cpfFake, fakeToken) } returns MockCall(
+            MockCall.ResponseCase.failure,
+            response
+        )
+
+        viewModel.getWallet(cpfFake, fakeToken)
+
+        verify { repository.getWallet(cpfFake, fakeToken) }
+        verify(exactly = 0) { wallet.onChanged(any()) }
+        verify { error.onChanged("Mock failed successfully") }
+    }
+
+    @Test
+    fun `should return mocked favorite stores list`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -46,7 +88,7 @@ class StoreViewModelTest {
     }
 
     @Test
-    fun `deveria exibir erro quando a request que lista das lojas favoritas falhar`() {
+    fun `should show error when request which list of favorite stores fails`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -70,7 +112,7 @@ class StoreViewModelTest {
     }
 
     @Test
-    fun `deveria confirmar remocao a loja a lista de lojas favoritas`() {
+    fun `should confirm removal the store the list of favorite stores`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -91,7 +133,7 @@ class StoreViewModelTest {
     }
 
     @Test
-    fun `deveria exibir erro quando a requisicao para salvar alteracao falha`() {
+    fun `should show error when request to save change fails`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -114,8 +156,10 @@ class StoreViewModelTest {
     private fun instantiateViewModel(): StoreViewModel {
         val viewModel = StoreViewModel(repository)
         viewModel.status.observeForever(status)
+        viewModel.wallet.observeForever(wallet)
         viewModel.storeList.observeForever(listObserver)
         viewModel.errorMessage.observeForever(error)
         return viewModel
     }
+
 }

@@ -17,7 +17,7 @@
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="260dp"
             android:orientation="vertical"
             android:background="@drawable/background">
 
@@ -40,10 +40,10 @@
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="125dp"
                 android:layout_marginStart="20dp"
-                android:text="Selecione a loja que deseja adicionar"
+                android:text="Selecione suas lojas favoritas"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@id/header"
@@ -82,22 +82,23 @@
         android:id="@+id/cardView"
         app:cardUseCompatPadding="true"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        app:cardCornerRadius="5dp"
+        android:layout_height="280dp"
+        app:cardCornerRadius="22dp"
         app:cardPreventCornerOverlap="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone">
+        app:cardElevation ="16sp"
+        android:visibility="gone"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/constLayout">
+            android:id="@+id/constLayout"
+            android:background="@color/white"
+            >
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
@@ -108,6 +109,8 @@
                 app:cardMaxElevation="12dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true"
+                android:elevation="2dp"
+                app:cardBackgroundColor="#b1bfca"
                 tools:ignore="MissingConstraints">
 
                 <ImageView
@@ -119,7 +122,8 @@
                     android:padding="0dp"
                     android:scaleType="fitXY"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="logo" />
 
                 <TextView
                     android:id="@+id/txtStore"
@@ -142,8 +146,9 @@
                     android:layout_height="wrap_content"
                     android:text="99%"
                     android:layout_gravity="center_vertical|right"
-                    android:textSize="29sp"
+                    android:textSize="27sp"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
                     app:layout_constraintStart_toEndOf="@+id/txtStore"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -154,7 +159,7 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="17dp"
                 android:background="@drawable/btn_rounded"
                 android:backgroundTint="@color/orange"
@@ -172,7 +177,7 @@
                 android:id="@+id/btnAddStore"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="100dp"
                 android:layout_marginBottom="17dp"
                 android:background="@drawable/btn_rounded"

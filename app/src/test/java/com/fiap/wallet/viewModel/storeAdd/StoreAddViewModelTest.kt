@@ -25,7 +25,7 @@ class StoreAddViewModelTest {
     private val status = mockk<Observer<Boolean>>(relaxed = true)
 
     @Test
-    fun `deveria retornar a lista de lojas mockada`() {
+    fun `should return to mocked store list`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -47,7 +47,7 @@ class StoreAddViewModelTest {
     }
 
     @Test
-    fun `deveria exibir erro quando a request de buscar todas as lojas falhar`() {
+    fun `should show error when request to fetch all stores fails`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -71,7 +71,7 @@ class StoreAddViewModelTest {
     }
 
     @Test
-    fun `deveria retornar a lista de lojas pesquisa pelo nome`() {
+    fun `should return the list of stores search by name`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -94,7 +94,7 @@ class StoreAddViewModelTest {
     }
 
     @Test
-    fun `deveria exibir erro quando a request de buscar pesquisa pelo nome da loja falhar`() {
+    fun `should show error when request to fetch search by store name fails`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -118,7 +118,7 @@ class StoreAddViewModelTest {
     }
 
     @Test
-    fun `deveria confirmar adicao loja a lista de lojas favoritas`() {
+    fun `should confirm addition store to list of favorite stores`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"
@@ -139,7 +139,7 @@ class StoreAddViewModelTest {
     }
 
     @Test
-    fun `deveria exibir erro quando a requisicao para salvar alteracao falha`() {
+    fun `should show error when request to save change fails`() {
         val viewModel = instantiateViewModel()
 
         val fakeToken = "abc-123"

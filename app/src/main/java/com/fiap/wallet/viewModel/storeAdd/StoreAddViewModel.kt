@@ -74,7 +74,6 @@ class StoreAddViewModel(private val repository: StoreAddRepository) : ViewModel(
                 status.postValue(false)
             }
         })
-
     }
 
 

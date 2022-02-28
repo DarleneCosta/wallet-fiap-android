@@ -25,6 +25,12 @@ interface RetroService {
         @Header("Authorization") authorization: String
     ): Call<List<Store>>
 
+    @GET("wallet/{cpf}")
+    fun getWallet(
+        @Path("cpf") cpf: String,
+        @Header("Authorization") authorization: String
+    ): Call<Wallet>
+
     @GET("preference/{cpf}")
     fun getAllStorePreference(
         @Path("cpf") cpf: String,

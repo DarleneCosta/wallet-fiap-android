@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.fiap.wallet.databinding.ActivityLoginBinding
 import com.fiap.wallet.models.LoginRequest
-import com.fiap.wallet.utils.Session
+import com.fiap.wallet.utils.SharedSession
 import com.fiap.wallet.repositories.login.LoginRepository
 import com.fiap.wallet.rest.RetroService
 import com.fiap.wallet.ui.signUp.SignUpActivity
@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.success.observe(this, Observer {
 
-            val session = Session(this)
+            val session = SharedSession(this)
             session.setStr("cpf", it.cpf)
             session.setStr("token", it.token)
 
