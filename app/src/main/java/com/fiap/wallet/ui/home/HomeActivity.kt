@@ -28,12 +28,10 @@ class HomeActivity : AppCompatActivity() {
 
     fun login(v: View) {
         startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
-        finish()
     }
 
     fun register(v: View?) {
         startActivity(Intent(this@HomeActivity, SignUpActivity::class.java))
-        finish()
     }
 
 }
