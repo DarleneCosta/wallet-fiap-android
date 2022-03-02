@@ -40,7 +40,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun registerUser() = _binding.apply {
 
-        btnSignUp.setOnClickListener {
+        btnSignup.setOnClickListener {
 
             if (!validateName(txtNome.text.toString())) {
                 txtNome.error = "Preencha o nome completo"

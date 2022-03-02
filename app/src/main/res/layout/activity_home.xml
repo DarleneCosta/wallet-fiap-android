@@ -26,11 +26,12 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="288dp"
-            android:layout_height="277dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Seja bem-vindo \n  à sua carteira digital!   \n\nAqui você compra\nem suas lojas favoritas\ne ganha na hora cashback\n em sua carteira!"
+            android:text="Seja bem-vindo \n  à sua carteira digital!   \n\nAqui você compra\nem suas \nlojas favoritas\ne ganha cashback!"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="26sp"
@@ -41,7 +42,7 @@
             android:id="@+id/imageView3"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            app:srcCompat="@mipmap/ic_wallet"
+            app:srcCompat="@drawable/img_home"
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="354dp"
             android:contentDescription="wallet" />
@@ -63,7 +64,7 @@
         android:layout_height="220dp">
 
         <Button
-            android:id="@+id/btnSignIn"
+            android:id="@+id/btnLogin"
             android:layout_width="343dp"
             android:layout_height="69dp"
             android:backgroundTint="#FFFFFF"
@@ -78,7 +79,7 @@
             tools:layout_editor_absoluteY="558dp" />
 
         <Button
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btnNewUser"
             android:layout_width="343dp"
             android:layout_height="69dp"
             android:backgroundTint="@color/orange"
