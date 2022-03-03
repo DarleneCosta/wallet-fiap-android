@@ -55,7 +55,7 @@ class StoreActivity : AppCompatActivity() {
         _binding.btnAdd.setOnClickListener {
             addStore()
         }
-        _binding.btnView.setOnClickListener {
+        _binding.btnViewValue.setOnClickListener {
             getViewWallet()
         }
 
@@ -66,11 +66,7 @@ class StoreActivity : AppCompatActivity() {
 
         _binding.loadingView.show()
 
-        session = SharedSession(this).getSession()
-        if(session.cpf.isNullOrEmpty()){
-            logout()
-            return
-        }
+        checkSession()
 
         notViewWallet = SharedSession(this).getBool("view") == true
         setViewWallet()
@@ -80,7 +76,11 @@ class StoreActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        loadingListStorePreference()
+
+        checkSession()
+        if(!session.cpf.isNullOrEmpty()) {
+            loadingListStorePreference()
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -169,6 +169,13 @@ class StoreActivity : AppCompatActivity() {
         {
             _binding.txtWalletView.visibility = View.VISIBLE
             _binding.txtWalletNotView.visibility = View.INVISIBLE
+        }
+    }
+
+    private fun checkSession(){
+        session = SharedSession(this).getSession()
+        if(session.cpf.isNullOrEmpty()){
+            logout()
         }
     }
 

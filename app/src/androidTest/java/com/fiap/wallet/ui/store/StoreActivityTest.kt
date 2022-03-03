@@ -28,5 +28,7 @@ class StoreActivityTest {
 
         onView(withId(android.R.id.button1)).perform(scrollTo(), click())
 
+        Thread.sleep(700)
+
     }
 }
