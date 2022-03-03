@@ -51,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
                 txtSenha.error = "Preencha a senha de acesso"
                 txtSenha.requestFocus()
                 return@setOnClickListener
-
             }
 
             viewModel.login(
