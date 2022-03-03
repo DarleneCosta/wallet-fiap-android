@@ -100,6 +100,7 @@
         android:textColor="@color/background"
         app:circularflow_defaultRadius="185sp"
         app:cornerRadius="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,13 +111,14 @@
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:text="Não tem conta ? Cadastrar-se"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        android:textColor="@color/hint"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
     <com.fiap.wallet.ui.shared.LoadingView

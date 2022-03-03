@@ -29,12 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="@font/roboto_bold"
+            android:layout_marginBottom="20dp"
             android:text="Seja bem-vindo \n  à sua carteira digital!   \n\nAqui você compra\nem suas \nlojas favoritas\ne ganha cashback!"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="26sp"
+            android:fontFamily="sans-serif-condensed-light"
             tools:layout_editor_absoluteX="61dp"
             tools:layout_editor_absoluteY="77dp" />
 
@@ -42,6 +42,7 @@
             android:id="@+id/imageView3"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginBottom="25dp"
             app:srcCompat="@drawable/img_home"
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="354dp"
@@ -75,6 +76,7 @@
             app:circularflow_defaultRadius="10sp"
             app:cornerRadius="30dp"
             android:onClick="login"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="558dp" />
 
@@ -85,6 +87,7 @@
             android:backgroundTint="@color/orange"
             android:text="Quero me cadastrar"
             android:onClick="register"
+            android:textStyle="bold"
             app:circularflow_defaultRadius="185sp"
             app:cornerRadius="30dp"
             tools:layout_editor_absoluteX="34dp"
