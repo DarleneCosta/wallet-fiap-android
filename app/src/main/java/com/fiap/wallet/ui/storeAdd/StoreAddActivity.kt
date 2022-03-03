@@ -33,6 +33,7 @@ class StoreAddActivity : AppCompatActivity() {
 
     private lateinit var session: Session
     private var idStore: Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityStoreAddBinding.inflate(layoutInflater)

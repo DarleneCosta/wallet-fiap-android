@@ -16,10 +16,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val session = SharedSession(this)
-        val cpf = session.getStr("cpf")
-        val token = session.getStr("token")
-        if (!cpf.isNullOrEmpty() && !token.isNullOrEmpty()) {
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val session = SharedSession(this).getSession()
+        if(!session.cpf.isNullOrEmpty()){
             startActivity(Intent(this@HomeActivity, StoreActivity::class.java))
             finish()
         }

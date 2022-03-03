@@ -20,7 +20,6 @@ import com.fiap.wallet.models.Store
 import com.fiap.wallet.repositories.store.StoreRepository
 import com.fiap.wallet.rest.RetroService
 import com.fiap.wallet.ui.home.HomeActivity
-import com.fiap.wallet.ui.login.LoginActivity
 import com.fiap.wallet.ui.store.adapters.StoreAdapter
 import com.fiap.wallet.ui.storeAdd.StoreAddActivity
 import com.fiap.wallet.utils.SharedSession
@@ -57,7 +56,7 @@ class StoreActivity : AppCompatActivity() {
             addStore()
         }
         _binding.btnView.setOnClickListener {
-            setViewWallet()
+            getViewWallet()
         }
 
         viewModel =
@@ -68,59 +67,20 @@ class StoreActivity : AppCompatActivity() {
         _binding.loadingView.show()
 
         session = SharedSession(this).getSession()
+        if(session.cpf.isNullOrEmpty()){
+            logout()
+            return
+        }
 
         notViewWallet = SharedSession(this).getBool("view") == true
-        setUIView()
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        viewModel.storeList.observe(this) {
-            Log.d(TAG, "onCreate: $it")
-            adapter.setStorePreferenceList(it)
-        }
-
-        viewModel.errorMessage.observe(this) {
-            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-        }
-
+        setViewWallet()
         loadingWallet()
+
     }
 
     override fun onResume() {
         super.onResume()
         loadingListStorePreference()
-    }
-
-    private fun addStore() {
-        startActivity(Intent(this@StoreActivity, StoreAddActivity::class.java))
-    }
-
-    private fun confirmDeleteStore(store: Store) {
-        val msg = "Você deseja excluir a loja ${store.name}?"
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(R.string.title_delete)
-        builder.setMessage(msg)
-
-        builder.setPositiveButton("Sim") { _, _ ->
-            _binding.loadingView.show()
-            viewModel.removeStorePreference(session.cpf, store.id, session.authorization)
-            viewModel.status.observe(this, Observer {
-                 loadingListStorePreference()
-                _binding.loadingView.dismiss()
-            })
-            viewModel.errorMessage.observe(this) {
-                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-                _binding.loadingView.dismiss()
-            }
-        }
-        builder.setNeutralButton("Cancelar") { _, _ ->
-            println("nok")
-        }
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -141,7 +101,49 @@ class StoreActivity : AppCompatActivity() {
     }
 
     private fun loadingListStorePreference()  {
+        _binding.loadingView.show()
         viewModel.getAllStore(session.cpf, session.authorization)
+
+        viewModel.storeList.observe(this) {
+            Log.d(TAG, "onCreate: $it")
+            adapter.setStorePreferenceList(it)
+            _binding.loadingView.dismiss()
+        }
+
+        viewModel.errorMessage.observe(this) {
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+            _binding.loadingView.dismiss()
+        }
+    }
+
+    private fun addStore() {
+        startActivity(Intent(this@StoreActivity, StoreAddActivity::class.java))
+    }
+
+    private fun confirmDeleteStore(store: Store) {
+        val msg = "Você deseja excluir a loja ${store.name}?"
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.title_delete)
+        builder.setMessage(msg)
+
+        builder.setPositiveButton("Sim") { _, _ ->
+            _binding.loadingView.show()
+            viewModel.removeStorePreference(session.cpf, store.id, session.authorization)
+            viewModel.status.observe(this, Observer {
+                loadingListStorePreference()
+                _binding.loadingView.dismiss()
+            })
+            viewModel.errorMessage.observe(this) {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+                _binding.loadingView.dismiss()
+            }
+        }
+        builder.setNeutralButton("Cancelar") { _, _ ->
+            println("nok")
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+
     }
 
     private fun logout() {
@@ -151,14 +153,14 @@ class StoreActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun setViewWallet(){
+    private fun getViewWallet(){
         notViewWallet = !notViewWallet
         val session = SharedSession(this)
         session.setBool("view", notViewWallet)
-        setUIView()
+        setViewWallet()
     }
 
-    private fun setUIView(){
+    private fun setViewWallet(){
         if(notViewWallet){
             _binding.txtWalletView.visibility = View.INVISIBLE
             _binding.txtWalletNotView.visibility = View.VISIBLE

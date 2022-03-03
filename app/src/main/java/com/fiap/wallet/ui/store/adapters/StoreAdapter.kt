@@ -58,8 +58,6 @@ class StoreViewHolder(private val binding: ResItemPreferenceBinding) :
         binding.btnDelete.setOnClickListener {
             onItemClicked(store)
         }
-
-
     }
 }
 
