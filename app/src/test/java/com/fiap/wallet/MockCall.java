@@ -14,8 +14,8 @@ public class MockCall<T> implements Call<T> {
         failure
     }
 
-    private T responseData;
-    private ResponseCase responseCase;
+    private final T responseData;
+    private final ResponseCase responseCase;
 
     public MockCall(ResponseCase responseCase, T responseData) {
         this.responseCase = responseCase;
