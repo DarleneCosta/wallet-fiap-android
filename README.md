@@ -1,2 +1,1 @@
-App para seleciona as lojas favoritas e reverter em creditos que podem ser convertido como um
-carteira digital
+App para selecionar as lojas favoritas e reverter seus descontos ao realizar uma compra em creditos como uma carteira digital.
